@@ -1,1 +1,18 @@
-/* Here is your custom css styles. */
+/* 修复长代码无法滚动 */
+.code-area pre,
+pre[class*="language-"],
+pre.line-numbers {
+  max-height: 500px !important;   /* 超过这个高度就出现滚动条，可自己调整 */
+  overflow: auto !important;
+  white-space: pre !important;
+}
+
+/* 防止被其他样式覆盖 */
+.code-area {
+  overflow: visible !important;
+}
+
+pre code {
+  white-space: pre !important;
+  display: block !important;
+}
