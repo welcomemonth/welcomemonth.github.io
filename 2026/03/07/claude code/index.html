@@ -1,0 +1,2952 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Claude Code 配置全解析:让 AI 真正懂你的项目, 博客,技术,编程,前端,后端,Hexo,生活">
+    <meta name="description" content="Claude Code 配置全解析:让 AI 真正懂你的项目
+从零开始，手把手教你搭建 Claude Code 的完整配置体系。告别每次重复解释项目背景的痛苦，让 AI 真正成为你团队的”老成员”。
+
+
+开篇：配置，才是 AI 编程的分水岭">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Claude Code 配置全解析:让 AI 真正懂你的项目 | ZhangZhengYu 的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 8.1.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="ZhangZhengYu 的博客" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">ZhangZhengYu 的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">ZhangZhengYu 的博客</div>
+        <div class="logo-desc">
+            
+            个人技术博客，分享编程、前端、后端、工具与生活随笔。
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/welcomemonth" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/welcomemonth" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/claudecode/cc.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Claude Code 配置全解析:让 AI 真正懂你的项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Claude-Code/">
+                                <span class="chip bg-color">Claude Code</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/blog/">
+                                <span class="chip bg-color">blog</span>
+                            </a>
+                        
+                            <a href="/tags/vibcoding/">
+                                <span class="chip bg-color">vibcoding</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                AI工具
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-03-07
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2026-04-18
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    37 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Claude-Code-配置全解析-让-AI-真正懂你的项目"><a href="#Claude-Code-配置全解析-让-AI-真正懂你的项目" class="headerlink" title="Claude Code 配置全解析:让 AI 真正懂你的项目"></a>Claude Code 配置全解析:让 AI 真正懂你的项目</h1><blockquote>
+<p>从零开始，手把手教你搭建 Claude Code 的完整配置体系。告别每次重复解释项目背景的痛苦，让 AI 真正成为你团队的”老成员”。</p>
+</blockquote>
+<hr>
+<h2 id="开篇：配置，才是-AI-编程的分水岭"><a href="#开篇：配置，才是-AI-编程的分水岭" class="headerlink" title="开篇：配置，才是 AI 编程的分水岭"></a>开篇：配置，才是 AI 编程的分水岭</h2><p>很多人第一次用 Claude Code 的体验是这样的：</p>
+<blockquote>
+<p>“帮我加个登录功能。”</p>
+<p>AI 噼里啪啦改了一通，结果用了你项目里根本没有的框架，命名风格跟项目格格不入，还顺手 <code>console.log</code> 满天飞。</p>
+<p>你花了 20 分钟纠正它，下次换个话题，它又忘了。</p>
+</blockquote>
+<p>这不是 AI 的问题——<strong>是你的配置没做好。</strong></p>
+<p>打个比方：你招了一个技术很强的实习生，但他第一天上班，没人告诉他”我们用什么框架””代码怎么命名””哪些文件不能碰”。他只能靠自己猜，猜错了你还得返工。</p>
+<p><strong>Claude Code 的配置系统，就是你给这个实习生准备的”入职手册”。</strong> 写好了，它秒懂项目背景、自动遵守规范、不再反复犯错。写不好，你就得天天跟在屁股后面收拾烂摊子。</p>
+<p>本文会带你从零开始，把 Claude Code 的配置体系摸透。不需要任何前置知识——如果你已经用过 Claude Code，效果会更好；如果还没用过，跟着装也行。</p>
+<hr>
+<h2 id="第一部分：理解配置体系的全貌"><a href="#第一部分：理解配置体系的全貌" class="headerlink" title="第一部分：理解配置体系的全貌"></a>第一部分：理解配置体系的全貌</h2><p>在动手写配置之前，先花 5 分钟搞清楚整体结构。这就像装修之前先看户型图——方向对了，后面才不会装反。</p>
+<h3 id="1-1-两个-claude-文件夹"><a href="#1-1-两个-claude-文件夹" class="headerlink" title="1.1 两个 .claude 文件夹"></a>1.1 两个 .claude 文件夹</h3><p>Claude Code 实际上有 <strong>两个</strong> <code>.claude</code> 目录，很多人只注意到一个：</p>
+<table>
+<thead>
+<tr>
+<th>文件夹</th>
+<th>位置</th>
+<th>谁用</th>
+<th>是否提交到 Git</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>项目级</strong> <code>.claude/</code></td>
+<td>你的项目根目录下</td>
+<td>整个团队</td>
+<td>✅ 是（团队共享）</td>
+</tr>
+<tr>
+<td><strong>全局级</strong> <code>~/.claude/</code></td>
+<td>你的用户主目录下</td>
+<td>只有你自己</td>
+<td>❌ 否（个人偏好）</td>
+</tr>
+</tbody></table>
+<p><strong>项目级</strong> <code>.claude/</code> 存放的是”团队共识”：项目用什么技术栈、代码怎么写、哪些命令能跑。你把它提交到 Git，团队每个人 <code>git pull</code> 一下就获得相同的配置。</p>
+<p><strong>全局级</strong> <code>~/.claude/</code> 存放的是”你的个人习惯”：你喜欢中文回复、你喜欢某种代码风格、你的会话历史。它只属于你，不会跟着项目走。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">你的电脑
+├── ~/.claude/                          ← 全局，跨所有项目
+│   ├── CLAUDE.md                       <span class="token comment"># 你的个人偏好</span>
+│   ├── settings.json                   <span class="token comment"># 全局权限设置</span>
+│   ├── skills/                         <span class="token comment"># 跨项目的个人 skills</span>
+│   ├── agents/                         <span class="token comment"># 跨项目的个人 agents</span>
+│   └── projects/                       <span class="token comment"># 会话历史 + 自动记忆</span>
+│
+└── 你的项目/
+    ├── CLAUDE.md                       ← 项目说明书（团队共享）
+    ├── CLAUDE.local.md                 ← 你的个人覆盖（不进 Git）
+    ├── .claudeignore                   ← 告诉 AI 忽略哪些文件
+    │
+    ├── .claude/                        ← 项目级配置
+    │   ├── settings.json               <span class="token comment"># 团队权限设置</span>
+    │   ├── settings.local.json         <span class="token comment"># 你的个人权限（不进 Git）</span>
+    │   ├── rules/                      <span class="token comment"># 模块化规则</span>
+    │   ├── skills/                     <span class="token comment"># 项目级 skills</span>
+    │   ├── agents/                     <span class="token comment"># 项目级 agents</span>
+    │   └── hooks/                      <span class="token comment"># 自动化脚本</span>
+    │
+    └── src/
+        ├── <span class="token punctuation">...</span>
+        └── payment/
+            └── CLAUDE.md               ← 模块说明书（仅该目录生效）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-2-配置的优先级：谁说了算？"><a href="#1-2-配置的优先级：谁说了算？" class="headerlink" title="1.2 配置的优先级：谁说了算？"></a>1.2 配置的优先级：谁说了算？</h3><p>同一个设置可能出现在多个地方，Claude Code 按以下优先级加载（从高到低）：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">文件夹级 CLAUDE.md  →  项目级 CLAUDE.md  →  全局级 CLAUDE.md
+        ↓                   ↓                    ↓
+     最具体             团队共识             个人兜底<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>高优先级覆盖低优先级。</strong> 比如全局 CLAUDE.md 写”用英文写注释”，项目级写”用中文写注释”，那么在当前项目中，Claude 会用中文。</p>
+<p>同样的优先级规则也适用于 <code>settings.json</code>：项目级覆盖全局，<code>.local</code> 版本覆盖非 <code>.local</code> 版本。</p>
+<h3 id="1-3-配置的分类：三层递进"><a href="#1-3-配置的分类：三层递进" class="headerlink" title="1.3 配置的分类：三层递进"></a>1.3 配置的分类：三层递进</h3><p>Claude Code 的配置可以分成三层，复杂度递增：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>包含什么</th>
+<th>解决什么问题</th>
+<th>学习曲线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>基础层</strong></td>
+<td>CLAUDE.md、settings.json、.claudeignore</td>
+<td>让 AI 了解项目、控制权限</td>
+<td>10 分钟上手</td>
+</tr>
+<tr>
+<td><strong>进阶层</strong></td>
+<td>rules/、hooks/、skills/、agents/</td>
+<td>模块化指令、自动化工作流</td>
+<td>需要一些实践经验</td>
+</tr>
+<tr>
+<td><strong>记忆层</strong></td>
+<td>Auto Memory、自建参考文档</td>
+<td>长期记忆、按需加载</td>
+<td>用着用着自然就懂了</td>
+</tr>
+</tbody></table>
+<p>新手先把基础层搞定，后面按需逐步加入。别一上来就搞全套，会把自己搞晕。</p>
+<hr>
+<h2 id="第二部分：核心配置文件详解"><a href="#第二部分：核心配置文件详解" class="headerlink" title="第二部分：核心配置文件详解"></a>第二部分：核心配置文件详解</h2><p>这一部分是整篇文章的重中之重。掌握这几个文件，你就能解决 80% 的”AI 不听话”问题。</p>
+<h3 id="2-1-CLAUDE-md：AI-的”项目入职手册”"><a href="#2-1-CLAUDE-md：AI-的”项目入职手册”" class="headerlink" title="2.1 CLAUDE.md：AI 的”项目入职手册”"></a>2.1 CLAUDE.md：AI 的”项目入职手册”</h3><p>如果说 Claude Code 只让你配一个文件，那一定是 CLAUDE.md。它是整个配置体系中<strong>投入产出比最高</strong>的一个。</p>
+<h4 id="它是什么？"><a href="#它是什么？" class="headerlink" title="它是什么？"></a>它是什么？</h4><p>CLAUDE.md 是一个 Markdown 文件，Claude Code 每次启动时<strong>第一个读取</strong>它。它的内容会被直接注入到 AI 的系统提示词中，在整个对话过程中持续生效。</p>
+<p>简单说：<strong>你在 CLAUDE.md 里写什么，Claude 就会照做。</strong></p>
+<ul>
+<li>你写”提交代码前必须先跑测试”——它每次都会跑测试</li>
+<li>你写”不要使用 <code>console.log</code>，用项目里的 logger 模块”——它就不会再乱打印</li>
+<li>你写”变量名用驼峰命名”——它就会遵守</li>
+</ul>
+<h4 id="三级-CLAUDE-md，各有分工"><a href="#三级-CLAUDE-md，各有分工" class="headerlink" title="三级 CLAUDE.md，各有分工"></a>三级 CLAUDE.md，各有分工</h4><p>很多人只知道在项目根目录放一个 CLAUDE.md。其实 Claude Code 设计了<strong>三个层级</strong>，同时生效、互不冲突：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>文件位置</th>
+<th>作用范围</th>
+<th>适合写什么</th>
+<th>谁来维护</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>全局级</strong></td>
+<td><code>~/.claude/CLAUDE.md</code></td>
+<td>所有项目</td>
+<td>个人偏好：语言、代码风格、通用原则</td>
+<td>你自己</td>
+</tr>
+<tr>
+<td><strong>项目级</strong></td>
+<td><code>项目根目录/CLAUDE.md</code></td>
+<td>当前项目</td>
+<td>技术栈、架构、规范、进度</td>
+<td>团队共享，提交到 Git</td>
+</tr>
+<tr>
+<td><strong>文件夹级</strong></td>
+<td><code>子目录/CLAUDE.md</code></td>
+<td>仅该目录</td>
+<td>模块专属约定，如支付模块的特殊规则</td>
+<td>模块负责人</td>
+</tr>
+</tbody></table>
+<p><strong>举个例子：</strong></p>
+<ul>
+<li>全局级写”永远用中文回复我”——所有项目都会用中文</li>
+<li>项目级写”本项目使用 Next.js 14 + Prisma”——AI 就知道技术栈了</li>
+<li><code>src/payment/CLAUDE.md</code> 写”支付金额一律用分为单位，不要用元”——只在支付模块下生效</li>
+</ul>
+<p>三层叠加，各司其职。</p>
+<h4 id="CLAUDE-md-里该写什么？"><a href="#CLAUDE-md-里该写什么？" class="headerlink" title="CLAUDE.md 里该写什么？"></a>CLAUDE.md 里该写什么？</h4><p>这是新手最头疼的问题。写太少，AI 还是一脸懵；写太多，AI 反而记不住重点。</p>
+<p><strong>✅ 该写的：</strong></p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>构建/测试/检查命令</td>
+<td><code>npm run test</code>、<code>make build</code>、<code>npm run lint</code></td>
+</tr>
+<tr>
+<td>技术栈和架构决策</td>
+<td>“Express REST API, Node 20, PostgreSQL via Prisma”</td>
+</tr>
+<tr>
+<td>不明显的注意事项</td>
+<td>“TypeScript 开启了严格模式，未使用的变量会报错”</td>
+</tr>
+<tr>
+<td>命名规范和导入约定</td>
+<td>“组件用 PascalCase，工具函数用 camelCase”</td>
+</tr>
+<tr>
+<td>目录结构概览</td>
+<td>“所有 API handler 在 src/handlers/“</td>
+</tr>
+<tr>
+<td>当前进度</td>
+<td>“书签 CRUD API 开发中，搜索功能待开发”</td>
+</tr>
+<tr>
+<td>禁忌事项</td>
+<td>“不要修改数据库迁移文件”、”不要暴露堆栈信息给客户端”</td>
+</tr>
+</tbody></table>
+<p><strong>❌ 不该写的：</strong></p>
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>为什么不该写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Linter/Formatter 能管的事</td>
+<td>“缩进用 2 空格” → 这是 ESLint 的工作</td>
+</tr>
+<tr>
+<td>完整的 API 文档</td>
+<td>太长，用 <code>@docs/api.md</code> 引用即可</td>
+</tr>
+<tr>
+<td>大段的理论解释</td>
+<td>AI 不需要你教它什么是 REST</td>
+</tr>
+<tr>
+<td>重复的代码示例</td>
+<td>给一个就够了，别贴十遍</td>
+</tr>
+</tbody></table>
+<p><strong>黄金法则：CLAUDE.md 控制在 200 行以内。</strong> 超过这个长度，AI 的指令遵循度会明显下降。它就像一个入职手册——新人不会读 100 页的文档。</p>
+<h4 id="一个可以直接用的模板"><a href="#一个可以直接用的模板" class="headerlink" title="一个可以直接用的模板"></a>一个可以直接用的模板</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 项目名称</span>
+
+<span class="token title important"><span class="token punctuation">##</span> 常用命令</span>
+npm run dev          # 启动开发服务器
+npm run test         # 运行测试（Jest）
+npm run lint         # 代码检查（ESLint + Prettier）
+npm run build        # 生产构建
+
+<span class="token title important"><span class="token punctuation">##</span> 架构</span>
+<span class="token list punctuation">-</span> Express REST API，Node 20
+<span class="token list punctuation">-</span> PostgreSQL，通过 Prisma ORM 操作
+<span class="token list punctuation">-</span> 所有 API handler 在 src/handlers/
+<span class="token list punctuation">-</span> 共享类型定义在 src/types/
+
+<span class="token title important"><span class="token punctuation">##</span> 编码规范</span>
+<span class="token list punctuation">-</span> 每个 handler 用 zod 做请求校验
+<span class="token list punctuation">-</span> 返回值统一格式：{ data, error }
+<span class="token list punctuation">-</span> 不向客户端暴露内部错误详情
+<span class="token list punctuation">-</span> 使用项目内的 logger 模块，不用 console.log
+
+<span class="token title important"><span class="token punctuation">##</span> 注意事项</span>
+<span class="token list punctuation">-</span> 测试用的是真实本地数据库，不是 mock。跑测试前先 <span class="token code-snippet code keyword">`npm run db:test:reset`</span>
+<span class="token list punctuation">-</span> TypeScript 严格模式：不允许未使用的 import
+<span class="token list punctuation">-</span> 不要修改 prisma/migrations/ 下的文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>大约 20 行。简洁、具体、可执行。直接复制到你的项目里，按实际情况改就行。</p>
+<h4 id="如何创建-CLAUDE-md？"><a href="#如何创建-CLAUDE-md？" class="headerlink" title="如何创建 CLAUDE.md？"></a>如何创建 CLAUDE.md？</h4><p><strong>方法一：用 <code>/init</code> 命令自动生成（推荐新手）</strong></p>
+<p>在项目根目录启动 Claude Code，输入 <code>/init</code>。它会自动扫描你的项目，生成一份 CLAUDE.md 初稿。你在这基础上删减修改即可。</p>
+<blockquote>
+<p>💡 <strong>提示</strong>：项目有一定规模再用 <code>/init</code> 效果更好。如果项目刚初始化，什么文件都没有，它扫不出什么东西。</p>
+</blockquote>
+<p><strong>方法二：用 <code>/memory</code> 编辑全局级</strong></p>
+<p>在 Claude Code 会话中输入 <code>/memory</code>，选择”全局 CLAUDE.md”，会用默认编辑器打开 <code>~/.claude/CLAUDE.md</code>。修改后<strong>需要重启 Claude Code 才生效</strong>。</p>
+<p><strong>方法三：手动创建</strong></p>
+<p>直接在项目根目录新建 <code>CLAUDE.md</code> 文件，按上面的模板写。</p>
+<h4 id="CLAUDE-local-md：你的个人小抄"><a href="#CLAUDE-local-md：你的个人小抄" class="headerlink" title="CLAUDE.local.md：你的个人小抄"></a>CLAUDE.local.md：你的个人小抄</h4><p>有时候你有个人的偏好，但不想让团队其他人也被影响。比如你习惯用另一种测试运行器，或者你想临时让 Claude 输出更详细的注释。</p>
+<p>在项目根目录创建 <code>CLAUDE.local.md</code>。Claude Code 会连同主 CLAUDE.md 一起读取它，而且它会被<strong>自动加入 .gitignore</strong>——你的个人调整永远不会进入团队仓库。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">CLAUDE.md           → 团队共享，提交到 Git
+CLAUDE.local.md     → 你的个人覆盖，不进 Git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="2-2-settings-json：权限的”门禁系统”"><a href="#2-2-settings-json：权限的”门禁系统”" class="headerlink" title="2.2 settings.json：权限的”门禁系统”"></a>2.2 settings.json：权限的”门禁系统”</h3><p>CLAUDE.md 告诉 AI “做什么”，settings.json 告诉 AI “能做什么、不能做什么”。</p>
+<p>它是 Claude Code 的权限门禁系统：哪些操作可以直接执行、哪些需要你确认、哪些完全禁止。</p>
+<h4 id="三个层级的-settings-json"><a href="#三个层级的-settings-json" class="headerlink" title="三个层级的 settings.json"></a>三个层级的 settings.json</h4><p>跟 CLAUDE.md 类似，settings.json 也有三个层级：</p>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>文件位置</th>
+<th>作用范围</th>
+<th>提交到 Git？</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>全局</strong></td>
+<td><code>~/.claude/settings.json</code></td>
+<td>所有项目</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>项目（团队）</strong></td>
+<td><code>项目/.claude/settings.json</code></td>
+<td>当前项目</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>项目（个人）</strong></td>
+<td><code>项目/.claude/settings.local.json</code></td>
+<td>当前项目</td>
+<td>❌（自动 gitignore）</td>
+</tr>
+</tbody></table>
+<p>优先级：个人 &gt; 项目团队 &gt; 全局。</p>
+<h4 id="权限配置详解"><a href="#权限配置详解" class="headerlink" title="权限配置详解"></a>权限配置详解</h4><p>settings.json 的核心就是 <code>permissions</code> 字段，它有两个列表：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://json.schemastore.org/claude-code-settings.json"</span><span class="token punctuation">,</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Read"</span><span class="token punctuation">,</span>
+      <span class="token string">"Write"</span><span class="token punctuation">,</span>
+      <span class="token string">"Edit"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(npm run *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git diff *)"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(curl *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Read(./.env)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Read(./.env.*)"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong><code>allow</code> 列表——免通行证</strong></p>
+<p>写在里面的操作，Claude Code 执行时<strong>不会问你确认</strong>，直接放行。</p>
+<p>常见的 allow 配置：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"Read"</span><span class="token punctuation">,</span>                  <span class="token comment">// 允许读文件</span>
+  <span class="token string">"Write"</span><span class="token punctuation">,</span>                 <span class="token comment">// 允许写文件</span>
+  <span class="token string">"Edit"</span><span class="token punctuation">,</span>                  <span class="token comment">// 允许编辑文件</span>
+  <span class="token string">"Bash(npm run *)"</span><span class="token punctuation">,</span>       <span class="token comment">// 允许跑 npm 脚本</span>
+  <span class="token string">"Bash(make *)"</span><span class="token punctuation">,</span>          <span class="token comment">// 允许跑 make 命令</span>
+  <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>      <span class="token comment">// 允许查看 git 状态</span>
+  <span class="token string">"Bash(git diff *)"</span><span class="token punctuation">,</span>      <span class="token comment">// 允许查看 diff</span>
+  <span class="token string">"Bash(git log *)"</span><span class="token punctuation">,</span>       <span class="token comment">// 允许查看日志</span>
+  <span class="token string">"Glob"</span><span class="token punctuation">,</span>                  <span class="token comment">// 允许搜索文件</span>
+  <span class="token string">"Grep"</span>                   <span class="token comment">// 允许搜索内容</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>💡 <code>Bash(npm run *)</code> 中的 <code>*</code> 是通配符，匹配任意字符。所以 <code>npm run test</code>、<code>npm run build</code>、<code>npm run dev</code> 都会被放行，但 <code>npm publish</code> 不会——它不是 <code>npm run</code> 开头。</p>
+</blockquote>
+<p><strong><code>deny</code> 列表——黑名单</strong></p>
+<p>写在里面的操作，<strong>无论什么情况都不允许执行</strong>，即使你手动确认也不行。</p>
+<p>一个合理的 deny 列表应该包含：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>            <span class="token comment">// 禁止危险删除</span>
+  <span class="token string">"Bash(git push --force *)"</span><span class="token punctuation">,</span>  <span class="token comment">// 禁止强制推送</span>
+  <span class="token string">"Bash(curl *)"</span><span class="token punctuation">,</span>              <span class="token comment">// 禁止直接网络请求</span>
+  <span class="token string">"Bash(wget *)"</span><span class="token punctuation">,</span>              <span class="token comment">// 禁止下载</span>
+  <span class="token string">"Read(./.env)"</span><span class="token punctuation">,</span>              <span class="token comment">// 禁止读取环境变量文件</span>
+  <span class="token string">"Read(./.env.*)"</span><span class="token punctuation">,</span>            <span class="token comment">// 禁止读取所有 .env 变体</span>
+  <span class="token string">"Read(./secrets/**)"</span>         <span class="token comment">// 禁止读取 secrets 目录</span>
+<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>不在任何列表中的操作——灰色地带</strong></p>
+<p>如果某个操作既不在 allow 也不在 deny 中，Claude Code 会<strong>在执行前先问你</strong>。这就是”灰色地带”——安全网。</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">AI</span><span class="token punctuation">:</span> 我要执行 `pip install requests`，可以吗？
+<span class="token key atrule">你</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>确认<span class="token punctuation">]</span> / <span class="token punctuation">[</span>拒绝<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>这个中间地带是有意设计的——你不需要提前想到所有可能的命令。</p>
+<h4 id="其他常用配置项"><a href="#其他常用配置项" class="headerlink" title="其他常用配置项"></a>其他常用配置项</h4><p>除了权限，settings.json 还能配置这些：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://json.schemastore.org/claude-code-settings.json"</span><span class="token punctuation">,</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span> ... <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 默认使用的模型</span>
+  <span class="token property">"model"</span><span class="token operator">:</span> <span class="token string">"sonnet"</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 上下文自动压缩阈值（0-100，百分比）</span>
+  <span class="token comment">// 上下文占用超过这个比例时自动压缩</span>
+  <span class="token property">"autoCompactThreshold"</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 环境变量（在 Claude Code 会话中可用）</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span><span class="token punctuation">,</span>
+    <span class="token property">"API_BASE_URL"</span><span class="token operator">:</span> <span class="token string">"http://localhost:3000"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>💡 <strong><code>$schema</code> 那行很重要</strong>：加上它，VS Code 或 Cursor 会自动提供配置项的自动补全和校验，能省掉很多拼写错误。</p>
+</blockquote>
+<h4 id="新手建议"><a href="#新手建议" class="headerlink" title="新手建议"></a>新手建议</h4><p>刚入门时，建议保持<strong>最保守的权限配置</strong>：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Read(./.env)"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>只配 deny，不配 allow。这样 Claude Code 每次执行操作都会问你确认。等你用熟了，再逐步把信任的操作加入 allow 列表。</p>
+<hr>
+<h3 id="2-3-claudeignore：给-AI-戴上”眼罩”"><a href="#2-3-claudeignore：给-AI-戴上”眼罩”" class="headerlink" title="2.3 .claudeignore：给 AI 戴上”眼罩”"></a>2.3 .claudeignore：给 AI 戴上”眼罩”</h3><p>你的项目里有很多文件是 AI 根本不需要看的：<code>node_modules/</code> 有几万个文件、<code>dist/</code> 是构建产物、<code>.env</code> 里是密钥。让 AI 扫描这些文件，只会浪费 token、拖慢速度，甚至可能泄露敏感信息。</p>
+<p><code>.claudeignore</code> 就像给 AI 戴上一个”眼罩”——告诉它哪些东西不要看。</p>
+<h4 id="语法跟-gitignore-一样"><a href="#语法跟-gitignore-一样" class="headerlink" title="语法跟 .gitignore 一样"></a>语法跟 .gitignore 一样</h4><p>如果你用过 <code>.gitignore</code>，<code>.claudeignore</code> 的语法完全一样：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 依赖包目录（太大了，不需要看）</span>
+node_modules/
+
+<span class="token comment"># 构建产物</span>
+dist/
+build/
+.next/
+
+<span class="token comment"># 日志文件</span>
+<span class="token important">*.log</span>
+
+<span class="token comment"># 敏感文件</span>
+.env
+.env.*
+secrets/
+
+<span class="token comment"># 数据库文件</span>
+<span class="token important">*.db</span>
+<span class="token important">*.sqlite</span>
+
+<span class="token comment"># 系统文件</span>
+.DS_Store
+Thumbs.db
+
+<span class="token comment"># IDE 配置</span>
+.vscode/
+.idea/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="为什么这很重要？"><a href="#为什么这很重要？" class="headerlink" title="为什么这很重要？"></a>为什么这很重要？</h4><ol>
+<li><strong>省 token</strong>：<code>node_modules/</code> 随便就几万文件，让 AI 扫描纯属浪费</li>
+<li><strong>防泄露</strong>：<code>.env</code> 里可能有数据库密码、API Key，不能让 AI 读到</li>
+<li><strong>提速度</strong>：排除的文件越多，AI 搜索越快</li>
+<li><strong>减噪音</strong>：构建产物、日志文件对 AI 来说是垃圾信息</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>红线</strong>：<code>.env</code>、密钥文件、证书文件一定要加到 <code>.claudeignore</code> 里。这是安全底线，不是可选项。</p>
+</blockquote>
+<hr>
+<h3 id="2-4-常用斜杠命令速查"><a href="#2-4-常用斜杠命令速查" class="headerlink" title="2.4 常用斜杠命令速查"></a>2.4 常用斜杠命令速查</h3><p>配置好之后，日常使用中这几个命令你会天天用到：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>什么时候用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/init</code></td>
+<td>自动生成 CLAUDE.md</td>
+<td>进入新项目的第一件事</td>
+</tr>
+<tr>
+<td><code>/memory</code></td>
+<td>查看/编辑记忆和 CLAUDE.md</td>
+<td>管理项目说明和自动记忆</td>
+</tr>
+<tr>
+<td><code>/context</code></td>
+<td>查看上下文使用情况</td>
+<td>感觉 AI “变笨”了，看看上下文是不是满了</td>
+</tr>
+<tr>
+<td><code>/compact</code></td>
+<td>压缩上下文</td>
+<td>对话太长，AI 开始”遗忘”时</td>
+</tr>
+<tr>
+<td><code>/clear</code></td>
+<td>清空对话，重新开始</td>
+<td>一个任务完成，开始全新任务</td>
+</tr>
+<tr>
+<td><code>/model</code></td>
+<td>切换模型</td>
+<td>需要更强/更快的模型时</td>
+</tr>
+<tr>
+<td><code>/rewind</code></td>
+<td>回滚修改</td>
+<td>AI 改坏了代码时的”后悔药”</td>
+</tr>
+<tr>
+<td><code>/review</code></td>
+<td>代码审查</td>
+<td>完成开发后检查质量</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>查看所有命令</td>
+<td>忘了有什么命令时</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>💡 <strong><code>/compact</code> vs <code>/clear</code></strong>：</p>
+<ul>
+<li><code>/compact</code> = 整理桌面，把前面的对话压缩成摘要，还能继续当前任务</li>
+<li><code>/clear</code> = 把桌面清空，等于重新开始</li>
+</ul>
+<p>经验法则：看到上下文使用超过 60%，就 <code>/compact</code> 一下。一个独立任务完成后，用 <code>/clear</code> 开始新的。</p>
+</blockquote>
+<hr>
+<h2 id="第三部分：进阶配置系统"><a href="#第三部分：进阶配置系统" class="headerlink" title="第三部分：进阶配置系统"></a>第三部分：进阶配置系统</h2><p>基础配置搞定之后，你会发现有些需求用 CLAUDE.md 和 settings.json 解决不了——</p>
+<ul>
+<li>CLAUDE.md 越来越长，300 行了，根本维护不动 → 需要 <strong>rules/</strong></li>
+<li>想让 AI 改完文件自动跑格式化，而不是靠它”记得” → 需要 <strong>hooks/</strong></li>
+<li>有一整套安全审查流程，想打包给 AI 用 → 需要 <strong>skills/</strong></li>
+<li>想让一个”专家角色”在隔离环境里做代码审查 → 需要 <strong>agents/</strong></li>
+</ul>
+<p>这一部分介绍的四个机制，是 Claude Code 从”工具”进化为”团队成员”的关键。</p>
+<h3 id="3-1-rules-文件夹：模块化指令"><a href="#3-1-rules-文件夹：模块化指令" class="headerlink" title="3.1 rules/ 文件夹：模块化指令"></a>3.1 rules/ 文件夹：模块化指令</h3><h4 id="问题：CLAUDE-md-越来越臃肿"><a href="#问题：CLAUDE-md-越来越臃肿" class="headerlink" title="问题：CLAUDE.md 越来越臃肿"></a>问题：CLAUDE.md 越来越臃肿</h4><p>项目刚起步时，一个 CLAUDE.md 就够了。但随着团队壮大，你会发现：</p>
+<ul>
+<li>前端、后端、测试各有不同的规范</li>
+<li>API 约定、安全规则、性能要求各不相同</li>
+<li>一个人在维护一份 300 行的 CLAUDE.md，谁都不敢改</li>
+</ul>
+<p><strong>解决方案：把指令拆分成多个文件，放在 <code>.claude/rules/</code> 目录下。</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">.claude/rules/
+├── code<span class="token punctuation">-</span>style.md        <span class="token comment"># 代码风格</span>
+├── testing.md           <span class="token comment"># 测试规范</span>
+├── api<span class="token punctuation">-</span>conventions.md   <span class="token comment"># API 约定</span>
+└── security.md          <span class="token comment"># 安全规则</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Claude Code 会<strong>自动加载</strong> rules/ 下的每个 Markdown 文件，跟 CLAUDE.md 一起生效。每个文件保持聚焦、易于维护。负责 API 规范的团队成员改 <code>api-conventions.md</code>，负责测试的人改 <code>testing.md</code>，互不干扰。</p>
+<h4 id="杀手级功能：路径作用域"><a href="#杀手级功能：路径作用域" class="headerlink" title="杀手级功能：路径作用域"></a>杀手级功能：路径作用域</h4><p>rules/ 真正的威力在于——你可以让一个规则<strong>只在特定目录下生效</strong>。</p>
+<p>做法很简单，在规则文件开头加一段 YAML frontmatter：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">paths</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"src/api/**/*.ts"</span>
+  <span class="token punctuation">-</span> <span class="token string">"src/handlers/**/*.ts"</span></span>
+<span class="token punctuation">---</span></span>
+
+<span class="token title important"><span class="token punctuation">#</span> API 设计规范</span>
+
+<span class="token list punctuation">-</span> 所有 handler 返回 { data, error } 格式
+<span class="token list punctuation">-</span> 用 zod 做请求体校验
+<span class="token list punctuation">-</span> 永远不向客户端暴露内部错误详情
+<span class="token list punctuation">-</span> 分页参数统一用 page + pageSize<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果：Claude Code 在编辑 <code>src/api/</code> 或 <code>src/handlers/</code> 下的文件时，才会加载这个规则。编辑 React 组件时，不会加载——节省 token，也避免不相关的规则干扰 AI。</p>
+<p><strong>路径匹配的语法：</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">"src/api/<span class="token important">**/*.ts"</span>     → src/api/ 下所有层级的 .ts 文件
+"<span class="token important">*.test.ts"</span>           → 所有 .test.ts 文件
+"docs/<span class="token important">**"</span>             → docs/ 下所有文件<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>没有 paths 字段的规则文件</strong>会在每次会话中无条件加载——适合那些全局通用的规则。</p>
+<h4 id="什么时候该用-rules-？"><a href="#什么时候该用-rules-？" class="headerlink" title="什么时候该用 rules/？"></a>什么时候该用 rules/？</h4><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CLAUDE.md 超过 100 行了</td>
+<td>按关注点拆分到 rules/</td>
+</tr>
+<tr>
+<td>不同目录有不同规范</td>
+<td>用路径作用域</td>
+</tr>
+<tr>
+<td>团队成员各自维护各自领域</td>
+<td>拆成独立文件，分工维护</td>
+</tr>
+<tr>
+<td>项目还小，CLAUDE.md 只有 30 行</td>
+<td>先不用 rules/，别过度设计</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="3-2-hooks-系统：确定性行为控制"><a href="#3-2-hooks-系统：确定性行为控制" class="headerlink" title="3.2 hooks/ 系统：确定性行为控制"></a>3.2 hooks/ 系统：确定性行为控制</h3><h4 id="CLAUDE-md-的局限：它只是”建议”"><a href="#CLAUDE-md-的局限：它只是”建议”" class="headerlink" title="CLAUDE.md 的局限：它只是”建议”"></a>CLAUDE.md 的局限：它只是”建议”</h4><p>CLAUDE.md 里写的规则，AI <strong>大多数时候</strong>会遵守，但<strong>不是每次</strong>。</p>
+<ul>
+<li>你写”改完文件后跑 prettier 格式化”——AI 有时会忘</li>
+<li>你写”不要执行 <code>rm -rf</code>“——万一 AI 理解错了呢？</li>
+<li>你写”完成之前必须通过测试”——AI 可能会跳过测试直接宣布完成</li>
+</ul>
+<p>语言模型就是这样——它尽力遵守，但你没法 100% 保证。</p>
+<p><strong>hooks 让你的规则从”建议”变成”强制执行”。</strong></p>
+<h4 id="hooks-是什么？"><a href="#hooks-是什么？" class="headerlink" title="hooks 是什么？"></a>hooks 是什么？</h4><p>hooks 是<strong>事件处理器</strong>——在 Claude Code 工作流的特定节点，自动执行你写的 shell 脚本。你的脚本每次都会运行，没有例外。</p>
+<p>这就像工厂流水线上的质检站：产品（AI 的操作）经过每个站点时，质检员（你的脚本）自动检查。不合格？直接打回。</p>
+<h4 id="支持的事件类型"><a href="#支持的事件类型" class="headerlink" title="支持的事件类型"></a>支持的事件类型</h4><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>触发时机</th>
+<th>典型用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>PreToolUse</strong></td>
+<td>工具执行<strong>前</strong></td>
+<td>安全检查：阻止危险命令</td>
+</tr>
+<tr>
+<td><strong>PostToolUse</strong></td>
+<td>工具执行<strong>后</strong></td>
+<td>自动格式化、自动 lint</td>
+</tr>
+<tr>
+<td><strong>Stop</strong></td>
+<td>AI 宣布完成时</td>
+<td>质量关卡：测试必须通过</td>
+</tr>
+<tr>
+<td><strong>UserPromptSubmit</strong></td>
+<td>用户按回车时</td>
+<td>输入验证、敏感词过滤</td>
+</tr>
+<tr>
+<td><strong>Notification</strong></td>
+<td>需要通知时</td>
+<td>桌面弹窗提醒</td>
+</tr>
+<tr>
+<td><strong>SessionStart</strong></td>
+<td>会话开始</td>
+<td>注入上下文</td>
+</tr>
+<tr>
+<td><strong>SessionEnd</strong></td>
+<td>会话结束</td>
+<td>清理资源</td>
+</tr>
+</tbody></table>
+<h4 id="退出码：脚本如何”告诉”-Claude-Code-该怎么做"><a href="#退出码：脚本如何”告诉”-Claude-Code-该怎么做" class="headerlink" title="退出码：脚本如何”告诉” Claude Code 该怎么做"></a>退出码：脚本如何”告诉” Claude Code 该怎么做</h4><p>这是 hooks 最关键的机制。你的脚本执行完后，通过<strong>退出码</strong>来告诉 Claude Code 下一步怎么做：</p>
+<table>
+<thead>
+<tr>
+<th>退出码</th>
+<th>含义</th>
+<th>Claude Code 的反应</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>0</strong></td>
+<td>成功</td>
+<td>继续正常执行</td>
+</tr>
+<tr>
+<td><strong>1</strong></td>
+<td>错误，但不阻止</td>
+<td>记录日志，<strong>继续执行</strong>（不阻止！）</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>严重问题，必须阻止</td>
+<td><strong>停止执行</strong>，把 stderr 的内容发给 AI 让它自我纠正</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>新手最常犯的错误</strong>：在安全 hook 里用退出码 1，以为能阻止危险操作。实际上退出码 1 <strong>不会阻止执行</strong>！必须用退出码 2 才能真正阻止。</p>
+</blockquote>
+<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><p>所有 hooks 配置在 <code>settings.json</code> 的 <code>hooks</code> 字段下：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Write|Edit|MultiEdit"</span><span class="token punctuation">,</span>
+        <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"command"</span><span class="token punctuation">,</span>
+            <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"jq -r '.tool_input.file_path' | xargs npx prettier --write 2&gt;/dev/null"</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">"matcher"</span><span class="token operator">:</span> <span class="token string">"Bash"</span><span class="token punctuation">,</span>
+        <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"command"</span><span class="token punctuation">,</span>
+            <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"$CLAUDE_PROJECT_DIR/.claude/hooks/bash-firewall.sh"</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>来拆解一下这段配置：</p>
+<p><strong>第一个 hook（PostToolUse）</strong>：</p>
+<ul>
+<li>触发时机：<code>Write</code>、<code>Edit</code> 或 <code>MultiEdit</code> 工具执行<strong>之后</strong></li>
+<li>做什么：用 prettier 自动格式化被修改的文件</li>
+<li>效果：Claude Code 每次修改文件后，代码自动格式化</li>
+</ul>
+<p><strong>第二个 hook（PreToolUse）</strong>：</p>
+<ul>
+<li>触发时机：<code>Bash</code> 工具执行<strong>之前</strong></li>
+<li>做什么：运行 <code>bash-firewall.sh</code> 脚本，检查命令是否安全</li>
+<li>效果：危险命令被拦截</li>
+</ul>
+<blockquote>
+<p>💡 <code>matcher</code> 字段是正则表达式，用来筛选哪些工具触发这个 hook。<code>"Write|Edit|MultiEdit"</code> 匹配文件修改操作，<code>"Bash"</code> 匹配终端命令。不写 matcher 则匹配所有工具。</p>
+</blockquote>
+<h4 id="实战：写一个-bash-防火墙"><a href="#实战：写一个-bash-防火墙" class="headerlink" title="实战：写一个 bash 防火墙"></a>实战：写一个 bash 防火墙</h4><p><code>.claude/hooks/bash-firewall.sh</code> 的内容：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># 从 stdin 读取 JSON 输入，提取要执行的命令</span>
+<span class="token assign-left variable">INPUT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span><span class="token variable">)</span></span>
+<span class="token assign-left variable">COMMAND</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-r</span> <span class="token string">'.tool_input.command // empty'</span><span class="token variable">)</span></span>
+
+<span class="token comment"># 检查危险模式</span>
+<span class="token keyword">if</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$COMMAND</span>"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-qE</span> <span class="token string">'rm -rf /|git push --force main|DROP TABLE'</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"⛔ 危险命令被拦截: <span class="token variable">$COMMAND</span>"</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">2</span>  <span class="token comment"># 退出码 2 = 阻止执行！</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>  <span class="token comment"># 退出码 0 = 放行</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>当 Claude Code 要执行 <code>rm -rf /</code> 时：</p>
+<ol>
+<li>PreToolUse hook 触发</li>
+<li>脚本检查到危险模式</li>
+<li>以退出码 2 退出，stderr 输出拦截信息</li>
+<li>Claude Code 停止执行，把拦截信息发给 AI</li>
+<li>AI 收到”危险命令被拦截”的反馈，换个安全的方式</li>
+</ol>
+<h4 id="实战：测试必须通过才能完成"><a href="#实战：测试必须通过才能完成" class="headerlink" title="实战：测试必须通过才能完成"></a>实战：测试必须通过才能完成</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment"># .claude/hooks/enforce-tests.sh</span>
+
+<span class="token comment"># 避免无限循环：检查 stop_hook_active 标志</span>
+<span class="token assign-left variable">INPUT</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span><span class="token variable">)</span></span>
+<span class="token keyword">if</span> <span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">$INPUT</span>"</span> <span class="token operator">|</span> jq <span class="token parameter variable">-e</span> <span class="token string">'.stop_hook_active'</span> <span class="token operator">&gt;</span> /dev/null <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">0</span>  <span class="token comment"># 第二次触发了，放行，让 AI 停下来</span>
+<span class="token keyword">fi</span>
+
+<span class="token comment"># 跑测试</span>
+<span class="token function">npm</span> <span class="token builtin class-name">test</span> <span class="token operator"><span class="token file-descriptor important">2</span>&gt;</span><span class="token file-descriptor important">&amp;1</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$?</span> <span class="token parameter variable">-ne</span> <span class="token number">0</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token builtin class-name">echo</span> <span class="token string">"❌ 测试未通过，请修复后再完成"</span> <span class="token operator">&gt;</span><span class="token file-descriptor important">&amp;2</span>
+  <span class="token builtin class-name">exit</span> <span class="token number">2</span>  <span class="token comment"># 阻止 AI 宣布完成</span>
+<span class="token keyword">fi</span>
+
+<span class="token builtin class-name">exit</span> <span class="token number">0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>⚠️ <strong>注意 <code>stop_hook_active</code> 标志</strong>：如果不检查它，会出现无限循环——hook 阻止 AI → AI 重试 → hook 又阻止 → AI 又重试……检查这个标志，第二次触发时放行，让 AI 停下来。</p>
+</blockquote>
+<h4 id="hooks-的几个坑"><a href="#hooks-的几个坑" class="headerlink" title="hooks 的几个坑"></a>hooks 的几个坑</h4><ol>
+<li><strong>不会热重载</strong>：修改了 hooks 配置，需要重启 Claude Code 才生效</li>
+<li><strong>PostToolUse 无法撤销</strong>：工具已经执行了，PostToolUse 只能”事后处理”。要阻止操作，用 PreToolUse</li>
+<li><strong>子 agent 也会触发</strong>：hooks 对子 agent 的操作也会递归触发</li>
+<li><strong>没有沙箱</strong>：hooks 脚本以你的完整用户权限运行。务必引号包裹变量、校验 JSON 输入、脚本引用用绝对路径</li>
+</ol>
+<hr>
+<h3 id="3-3-skills-文件夹：可复用的工作流"><a href="#3-3-skills-文件夹：可复用的工作流" class="headerlink" title="3.3 skills/ 文件夹：可复用的工作流"></a>3.3 skills/ 文件夹：可复用的工作流</h3><h4 id="什么是-skills？"><a href="#什么是-skills？" class="headerlink" title="什么是 skills？"></a>什么是 skills？</h4><p>想象你经常需要做安全审查。每次你都要告诉 AI：”检查 SQL 注入、XSS、暴露的密钥、不安全的配置……” 说了十遍之后，你烦了。</p>
+<p><strong>Skills 就是你把这些重复的工作流”打包”起来，让 AI 在合适的时候自动调用。</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">你</span><span class="token punctuation">:</span> <span class="token string">"帮我审查一下这个 PR 的安全问题"</span>
+
+AI 识别到匹配 security<span class="token punctuation">-</span>review skill → 自动调用 → 按你定义好的流程审查<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="skill-的目录结构"><a href="#skill-的目录结构" class="headerlink" title="skill 的目录结构"></a>skill 的目录结构</h4><p>每个 skill 是一个独立的子目录，包含一个 <code>SKILL.md</code> 文件：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">.claude/skills/
+├── security<span class="token punctuation">-</span>review/
+│   ├── SKILL.md              <span class="token comment"># 触发条件和指令</span>
+│   └── DETAILED_GUIDE.md     <span class="token comment"># 详细的安全标准文档</span>
+└── deploy/
+    ├── SKILL.md              <span class="token comment"># 部署流程</span>
+    └── templates/
+        └── release<span class="token punctuation">-</span>notes.md  <span class="token comment"># 发布说明模板</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>跟 commands（单个文件）不同，skills 可以<strong>打包多个支持文件</strong>。这是它最大的优势。</p>
+<h4 id="SKILL-md-怎么写？"><a href="#SKILL-md-怎么写？" class="headerlink" title="SKILL.md 怎么写？"></a>SKILL.md 怎么写？</h4><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> security<span class="token punctuation">-</span>review
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 全面的安全审查。在审查代码漏洞、部署前检查、
+  或用户提到安全相关话题时使用。
+<span class="token key atrule">allowed-tools</span><span class="token punctuation">:</span> Read<span class="token punctuation">,</span> Grep<span class="token punctuation">,</span> Glob</span>
+<span class="token punctuation">---</span></span>
+
+对代码库进行安全漏洞分析：
+
+<span class="token list punctuation">1.</span> SQL 注入和 XSS 风险
+<span class="token list punctuation">2.</span> 暴露的凭据或密钥
+<span class="token list punctuation">3.</span> 不安全的配置
+<span class="token list punctuation">4.</span> 认证和授权的漏洞
+
+输出带严重等级的发现报告，以及具体的修复建议。
+参考 @DETAILED_GUIDE.md 了解我们的安全标准。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>关键字段解释：</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code></td>
+<td>skill 名称</td>
+<td><code>security-review</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>什么时候触发这个 skill</td>
+<td>“在审查安全漏洞时使用”</td>
+</tr>
+<tr>
+<td><code>allowed-tools</code></td>
+<td>限制 skill 能使用的工具</td>
+<td><code>Read, Grep, Glob</code>（只读，不写文件）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>💡 <code>@DETAILED_GUIDE.md</code> 中的 <code>@</code> 符号会引入同目录下的文件。skill 执行时，这个文件的内容也会被加载。这就是”打包”的含义——指令和支持文件一起。</p>
+</blockquote>
+<h4 id="两种调用方式"><a href="#两种调用方式" class="headerlink" title="两种调用方式"></a>两种调用方式</h4><ol>
+<li><strong>自动调用</strong>：你说”审查一下安全问题”，Claude 读取 description，发现匹配，自动调用 skill</li>
+<li><strong>手动调用</strong>：在对话框输入 <code>/security-review</code>，直接触发</li>
+</ol>
+<h4 id="个人-skills-vs-项目-skills"><a href="#个人-skills-vs-项目-skills" class="headerlink" title="个人 skills vs 项目 skills"></a>个人 skills vs 项目 skills</h4><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>作用范围</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>~/.claude/skills/</code></td>
+<td>跨所有项目</td>
+<td>你个人的代码审查流程</td>
+</tr>
+<tr>
+<td><code>项目/.claude/skills/</code></td>
+<td>仅当前项目</td>
+<td>项目特定的部署流程</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="3-4-agents-文件夹：专业化的子角色"><a href="#3-4-agents-文件夹：专业化的子角色" class="headerlink" title="3.4 agents/ 文件夹：专业化的子角色"></a>3.4 agents/ 文件夹：专业化的子角色</h3><h4 id="什么时候需要-agents？"><a href="#什么时候需要-agents？" class="headerlink" title="什么时候需要 agents？"></a>什么时候需要 agents？</h4><p>有些任务足够复杂，值得用一个<strong>独立角色</strong>来处理——它有自己的系统提示词、自己的工具限制、甚至可以用不同的模型。</p>
+<p>比如代码审查：你不想让主会话被几千行中间探索过程淹没。你可以定义一个 <code>code-reviewer</code> agent，让它在自己的”小房间”里做审查，完成后只把结论告诉你。</p>
+<h4 id="agent-的配置格式"><a href="#agent-的配置格式" class="headerlink" title="agent 的配置格式"></a>agent 的配置格式</h4><p>每个 agent 是一个 Markdown 文件，放在 <code>.claude/agents/</code> 下：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">.claude/agents/
+├── code<span class="token punctuation">-</span>reviewer.md     <span class="token comment"># 代码审查专家</span>
+└── security<span class="token punctuation">-</span>auditor.md  <span class="token comment"># 安全审计专家</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><code>code-reviewer.md</code> 的内容：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token front-matter yaml language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> code<span class="token punctuation">-</span>reviewer
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 专业代码审查员。在审查 PR、检查 bug、
+  或合并前验证实现时主动使用。
+<span class="token key atrule">model</span><span class="token punctuation">:</span> sonnet
+<span class="token key atrule">tools</span><span class="token punctuation">:</span> Read<span class="token punctuation">,</span> Grep<span class="token punctuation">,</span> Glob</span>
+<span class="token punctuation">---</span></span>
+
+你是一位资深代码审查员，专注于正确性和可维护性。
+
+审查代码时：
+<span class="token list punctuation">-</span> 标记 bug，不只是风格问题
+<span class="token list punctuation">-</span> 给出具体的修复建议，不说空话
+<span class="token list punctuation">-</span> 检查边界情况和错误处理的遗漏
+<span class="token list punctuation">-</span> 只在大规模场景下才提性能问题<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>关键字段：</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>作用</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code></td>
+<td>agent 名称</td>
+<td>Claude 根据这个识别</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>什么时候调用</td>
+<td>类似 skill 的 description</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>使用的模型</td>
+<td><code>haiku</code>（便宜快速）、<code>sonnet</code>（均衡）、<code>opus</code>（最强）</td>
+</tr>
+<tr>
+<td><code>tools</code></td>
+<td>允许使用的工具</td>
+<td>限制 agent 的能力范围</td>
+</tr>
+</tbody></table>
+<h4 id="为什么要限制工具？"><a href="#为什么要限制工具？" class="headerlink" title="为什么要限制工具？"></a>为什么要限制工具？</h4><p>安全审计员只需要<strong>读</strong>代码，不需要<strong>写</strong>代码。把 <code>tools</code> 限制为 <code>Read, Grep, Glob</code>，就确保它不会意外修改任何文件。</p>
+<p>这种限制是<strong>有意为之</strong>的——不同的角色，不同的权限。就像公司里，审计部门有查看权限，但没有操作权限。</p>
+<h4 id="model-字段的意义"><a href="#model-字段的意义" class="headerlink" title="model 字段的意义"></a>model 字段的意义</h4><p><code>model</code> 字段让你可以为不同任务选择合适的模型：</p>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>适合做什么</th>
+<th>成本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>haiku</strong></td>
+<td>只读的探索任务、简单的搜索</td>
+<td>最便宜</td>
+</tr>
+<tr>
+<td><strong>sonnet</strong></td>
+<td>代码审查、一般开发任务</td>
+<td>中等</td>
+</tr>
+<tr>
+<td><strong>opus</strong></td>
+<td>复杂架构设计、关键决策</td>
+<td>最贵</td>
+</tr>
+</tbody></table>
+<p>把简单任务交给 haiku，复杂任务交给 opus，既省钱又高效。</p>
+<h4 id="个人-agents"><a href="#个人-agents" class="headerlink" title="个人 agents"></a>个人 agents</h4><p>跟 skills 一样，agents 也分项目级和全局级：</p>
+<table>
+<thead>
+<tr>
+<th>位置</th>
+<th>作用范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>~/.claude/agents/</code></td>
+<td>跨所有项目</td>
+</tr>
+<tr>
+<td><code>项目/.claude/agents/</code></td>
+<td>仅当前项目</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="3-5-Auto-Memory：AI-的”自动笔记本”"><a href="#3-5-Auto-Memory：AI-的”自动笔记本”" class="headerlink" title="3.5 Auto Memory：AI 的”自动笔记本”"></a>3.5 Auto Memory：AI 的”自动笔记本”</h3><h4 id="CLAUDE-md-vs-Auto-Memory"><a href="#CLAUDE-md-vs-Auto-Memory" class="headerlink" title="CLAUDE.md vs Auto Memory"></a>CLAUDE.md vs Auto Memory</h4><table>
+<thead>
+<tr>
+<th></th>
+<th>CLAUDE.md</th>
+<th>Auto Memory</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>谁写的</strong></td>
+<td>你手动写</td>
+<td>AI 自己记</td>
+</tr>
+<tr>
+<td><strong>加载方式</strong></td>
+<td>每次会话全量加载</td>
+<td>先读索引，按需加载</td>
+</tr>
+<tr>
+<td><strong>优先级</strong></td>
+<td>高</td>
+<td>中</td>
+</tr>
+<tr>
+<td><strong>内容</strong></td>
+<td>项目规范、技术栈</td>
+<td>你的偏好、踩过的坑、项目决策</td>
+</tr>
+</tbody></table>
+<p>如果说 CLAUDE.md 是<strong>你主动立下的规矩</strong>，Auto Memory 就是 <strong>AI 在干活过程中默默记下的笔记</strong>。你没写进 CLAUDE.md 的习惯、反馈、项目踩坑，AI 会自动记录。</p>
+<h4 id="如何启用？"><a href="#如何启用？" class="headerlink" title="如何启用？"></a>如何启用？</h4><p>在 Claude Code 会话中输入：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">/memory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在弹出的菜单中选择”启用 Auto Memory”。启用后，AI 会自动开始记录。</p>
+<h4 id="记录的内容分四类"><a href="#记录的内容分四类" class="headerlink" title="记录的内容分四类"></a>记录的内容分四类</h4><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+<th>举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>user</code></td>
+<td>关于你</td>
+<td>“用户不喜欢深色 UI”、”用户偏好函数式编程”</td>
+</tr>
+<tr>
+<td><code>feedback</code></td>
+<td>你给过的反馈</td>
+<td>“不要这样做”、”对，就这样”</td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td>项目相关</td>
+<td>“决定用 Redis 做缓存”、”数据库迁移脚本有问题”</td>
+</tr>
+<tr>
+<td><code>reference</code></td>
+<td>外部资源索引</td>
+<td>“设计文档在 docs/design.md”</td>
+</tr>
+</tbody></table>
+<h4 id="使用手感"><a href="#使用手感" class="headerlink" title="使用手感"></a>使用手感</h4><ul>
+<li>它<strong>只在当前项目生效</strong>，换项目需重新积累</li>
+<li>不会每次把所有记忆全加载——只读一份 <code>memory.md</code> 索引，<strong>遇到具体问题才去读对应的子文件</strong>，占 token 很少</li>
+<li>随时按 <code>Ctrl+O</code> 查看被调用过的记忆内容（vscode中使用可能快捷键被占用）</li>
+<li>记错了？直接跟 AI 说”忘掉刚才说的不喜欢深色主题”，它会自己删掉</li>
+</ul>
+<blockquote>
+<p>💡 <strong>本质认知</strong>：agent 的所有”记忆”，本质上都是在合适的时候向大模型注入压缩过的上下文。CLAUDE.md 和 Auto Memory 只是组织方式不同。</p>
+</blockquote>
+<hr>
+<h3 id="3-6-自建参考文档：渐进式披露"><a href="#3-6-自建参考文档：渐进式披露" class="headerlink" title="3.6 自建参考文档：渐进式披露"></a>3.6 自建参考文档：渐进式披露</h3><p>有些信息不适合全部塞进 CLAUDE.md（太长、太专门），但 AI 需要的时候必须能查到。</p>
+<p><strong>解决方案：创建独立的参考文档，在 CLAUDE.md 中用指引告诉 AI 什么时候去读。</strong></p>
+<p>举个例子，假设你做一个产品，需要：</p>
+<ul>
+<li>品牌视觉规范 → <code>docs/brand-visual.md</code></li>
+<li>产品文案风格 → <code>docs/copywriting-style.md</code></li>
+<li>API 约定 → <code>docs/api-conventions.md</code></li>
+</ul>
+<p>在 CLAUDE.md 中加上指引：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> 外部参考文档</span>
+
+<span class="token list punctuation">-</span> 修改前端视觉、调颜色、调间距时 → 必读 <span class="token code-snippet code keyword">`docs/brand-visual.md`</span>
+<span class="token list punctuation">-</span> 写产品文案、按钮文字、提示语时 → 必读 <span class="token code-snippet code keyword">`docs/copywriting-style.md`</span>
+<span class="token list punctuation">-</span> 写 API、定义返回格式时 → 必读 <span class="token code-snippet code keyword">`docs/api-conventions.md`</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>效果：AI 只在”需要的时候”才去读完整文档。既保证了准确性，又不浪费 token。</p>
+<p>这就是”渐进式披露”——<strong>平时不加载，需要时才加载。</strong></p>
+<h4 id="三层记忆体系总览"><a href="#三层记忆体系总览" class="headerlink" title="三层记忆体系总览"></a>三层记忆体系总览</h4><p>到这里，Claude Code 的三层记忆体系就完整了：</p>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>位置</th>
+<th>优先级</th>
+<th>加载方式</th>
+<th>谁在维护</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一层</td>
+<td>CLAUDE.md（三级）</td>
+<td>高</td>
+<td>会话启动全量加载</td>
+<td>你手动维护</td>
+</tr>
+<tr>
+<td>第二层</td>
+<td>Auto Memory</td>
+<td>中</td>
+<td>先读索引、按需读子文件</td>
+<td>AI 自己写、你校对</td>
+</tr>
+<tr>
+<td>第三层</td>
+<td>参考文档</td>
+<td>按需</td>
+<td>遇到对应任务才读</td>
+<td>你手动维护</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="第四部分：配置最佳实践"><a href="#第四部分：配置最佳实践" class="headerlink" title="第四部分：配置最佳实践"></a>第四部分：配置最佳实践</h2><p>理论讲完了，这一部分聊点实际的：新手怎么一步步搭起来？常见的坑有哪些？团队协作怎么分工？</p>
+<h3 id="4-1-新手入门：5-步走"><a href="#4-1-新手入门：5-步走" class="headerlink" title="4.1 新手入门：5 步走"></a>4.1 新手入门：5 步走</h3><p>如果你从零开始，按这个顺序来，每一步都有明确目标：</p>
+<p><strong>第 1 步：用 <code>/init</code> 生成 CLAUDE.md</strong></p>
+<p>在项目根目录启动 Claude Code，输入 <code>/init</code>。它会自动扫描你的项目结构、技术栈，生成一份 CLAUDE.md 初稿。</p>
+<p>拿到初稿后，精简到核心内容：常用命令、架构决策、编码规范、注意事项。控制在 200 行以内。</p>
+<p><strong>第 2 步：配置 settings.json 的基础权限</strong></p>
+<p>创建 <code>.claude/settings.json</code>，至少做两件事：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://json.schemastore.org/claude-code-settings.json"</span><span class="token punctuation">,</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Read"</span><span class="token punctuation">,</span>
+      <span class="token string">"Write"</span><span class="token punctuation">,</span>
+      <span class="token string">"Edit"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(npm run *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git status)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Bash(git diff *)"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span>
+      <span class="token string">"Read(./.env)"</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>允许常用操作，禁止危险操作。其余的让它问你。</p>
+<p><strong>第 3 步：添加 .claudeignore</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">node_modules/
+dist/
+build/
+.next/
+<span class="token important">*.log</span>
+.env
+.env.*
+.DS_Store<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>排除不需要的文件，省 token、防泄露。</p>
+<p><strong>第 4 步：项目增长后，拆分 rules/</strong></p>
+<p>当 CLAUDE.md 超过 100 行，按关注点拆分到 <code>.claude/rules/</code>。先拆最臃肿的部分，不用一次拆完。</p>
+<p><strong>第 5 步：添加全局 <code>~/.claude/CLAUDE.md</code></strong></p>
+<p>写下你的个人偏好，下面是我个人使用的一个例子：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> 全局个人偏好</span>
+
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">当前日期</span><span class="token punctuation">**</span></span>：2026-07-06
+
+<span class="token title important"><span class="token punctuation">##</span> 语言与沟通</span>
+<span class="token list punctuation">-</span> 默认使用中文回复，用户要求英文时除外。
+<span class="token list punctuation">-</span> 代码、注释、文档、提交信息必须使用英文。
+<span class="token list punctuation">-</span> 严格遵循 Go 语言习惯（idiomatic Go），优先参考 Effective Go 和 Go Proverbs。
+
+<span class="token title important"><span class="token punctuation">##</span> Go 语言核心原则</span>
+<span class="token list punctuation">-</span> 优先使用标准库（stdlib），仅在必要时引入第三方库。
+<span class="token list punctuation">-</span> 错误处理必须显式：不要忽略错误，使用 <span class="token code-snippet code keyword">`errors`</span> 包或自定义 error 类型。
+<span class="token list punctuation">-</span> 并发安全：优先使用 channels 和 context 管理 goroutine。
+<span class="token list punctuation">-</span> 性能优先：避免不必要的分配，合理使用 sync 包和 pooling。
+<span class="token list punctuation">-</span> 代码风格：简洁、可读、明确（clear is better than clever）。
+<span class="token list punctuation">-</span> 命名规范：使用驼峰（exported）/小写（unexported），接口名以 "er" 结尾（如 Reader）。
+
+<span class="token title important"><span class="token punctuation">##</span> 项目结构与规范</span>
+<span class="token list punctuation">-</span> 采用标准 Go 项目布局：
+  <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`cmd/`</span>：可执行入口
+  <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`internal/`</span>：私有代码
+  <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`pkg/`</span>：可复用包（谨慎使用）
+  <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`api/`</span>、<span class="token code-snippet code keyword">`config/`</span>、<span class="token code-snippet code keyword">`pkg/`</span> 等按需组织
+<span class="token list punctuation">-</span> 模块管理：始终使用 Go Modules（go.mod），保持 go version 最新稳定版。
+<span class="token list punctuation">-</span> 测试：优先 table-driven tests，使用 <span class="token code-snippet code keyword">`testing`</span> 和 <span class="token code-snippet code keyword">`testify`</span>（如果项目已引入）。
+
+<span class="token title important"><span class="token punctuation">##</span> 工具与命令</span>
+<span class="token list punctuation">-</span> Build：<span class="token code-snippet code keyword">`go build ./...`</span>
+<span class="token list punctuation">-</span> Test：<span class="token code-snippet code keyword">`go test ./... -race -count=1`</span>
+<span class="token list punctuation">-</span> Lint：<span class="token code-snippet code keyword">`golangci-lint run`</span>
+<span class="token list punctuation">-</span> Format：<span class="token code-snippet code keyword">`go fmt ./...`</span> 或 <span class="token code-snippet code keyword">`gofumpt`</span>
+<span class="token list punctuation">-</span> Vet：<span class="token code-snippet code keyword">`go vet ./...`</span>
+<span class="token list punctuation">-</span> 依赖：<span class="token code-snippet code keyword">`go mod tidy &amp;&amp; go mod verify`</span>
+
+<span class="token title important"><span class="token punctuation">##</span> Git 与提交</span>
+<span class="token list punctuation">-</span> 使用 Conventional Commits：<span class="token code-snippet code keyword">`feat: `</span>、<span class="token code-snippet code keyword">`fix: `</span>、<span class="token code-snippet code keyword">`refactor: `</span> 等
+<span class="token list punctuation">-</span> 提交信息清晰、原子化。
+
+<span class="token title important"><span class="token punctuation">##</span> 最佳实践</span>
+<span class="token list punctuation">-</span> 始终处理 context.Context 以支持取消和超时。
+<span class="token list punctuation">-</span> 避免全局变量，优先依赖注入。
+<span class="token list punctuation">-</span> 接口设计小而专一。
+<span class="token list punctuation">-</span> 生产就绪：添加健康检查、优雅关闭、结构化日志（推荐 zap 或 slog）。
+<span class="token list punctuation">-</span> 安全性：验证输入、避免 sql 注入、使用最新依赖。
+
+<span class="token title important"><span class="token punctuation">##</span> 关于我</span>
+<span class="token list punctuation">-</span> 我是一名 Go 后端工程师，专注于高性能、并发系统、微服务和 CLI 工具。
+<span class="token list punctuation">-</span> 偏好干净架构（Clean Architecture）和领域驱动设计（DDD）思想。
+<span class="token list punctuation">-</span> 重视可测试性、可观测性和可维护性。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这 5 步做完，你就拥有了一套能覆盖 95% 项目的配置。剩下的 skills、agents、hooks，等你有具体的重复工作流时再加。</p>
+<h3 id="4-2-配置避坑指南"><a href="#4-2-配置避坑指南" class="headerlink" title="4.2 配置避坑指南"></a>4.2 配置避坑指南</h3><h4 id="坑-1：CLAUDE-md-写成长篇小说"><a href="#坑-1：CLAUDE-md-写成长篇小说" class="headerlink" title="坑 1：CLAUDE.md 写成长篇小说"></a>坑 1：CLAUDE.md 写成长篇小说</h4><p><strong>症状</strong>：CLAUDE.md 超过 300 行，里面有大段的理论解释、完整的 API 文档、重复的代码示例。</p>
+<p><strong>后果</strong>：AI 的指令遵循度下降，上下文被大量消耗，真正重要的指令被淹没。</p>
+<p><strong>解决</strong>：</p>
+<ul>
+<li>控制在 200 行以内</li>
+<li>只写”做什么”，不写”为什么”</li>
+<li>详细文档用 <code>@docs/xxx.md</code> 引用</li>
+</ul>
+<h4 id="坑-2：安全-hook-用退出码-1"><a href="#坑-2：安全-hook-用退出码-1" class="headerlink" title="坑 2：安全 hook 用退出码 1"></a>坑 2：安全 hook 用退出码 1</h4><p><strong>症状</strong>：写了 PreToolUse hook 阻止危险命令，但用 <code>exit 1</code>。</p>
+<p><strong>后果</strong>：危险命令照样执行。退出码 1 只记录日志，不阻止执行。</p>
+<p><strong>解决</strong>：安全相关的 hook <strong>必须</strong> 用 <code>exit 2</code>。</p>
+<h4 id="坑-3：权限设置过于宽松"><a href="#坑-3：权限设置过于宽松" class="headerlink" title="坑 3：权限设置过于宽松"></a>坑 3：权限设置过于宽松</h4><p><strong>症状</strong>：allow 列表里有 <code>Bash(*)</code>，等于什么命令都能跑。</p>
+<p><strong>后果</strong>：AI 可能执行你没想到的危险操作，而且不会问你。</p>
+<p><strong>解决</strong>：</p>
+<ul>
+<li>allow 列表只放你<strong>确定安全</strong>的操作</li>
+<li>不确定的就放灰色地带，让它问你</li>
+<li>deny 列表至少包含 <code>rm -rf</code>、<code>.env</code> 读取</li>
+</ul>
+<h4 id="坑-4：忘记-claudeignore"><a href="#坑-4：忘记-claudeignore" class="headerlink" title="坑 4：忘记 .claudeignore"></a>坑 4：忘记 .claudeignore</h4><p><strong>症状</strong>：没有 .claudeignore，AI 扫描了整个 node_modules。</p>
+<p><strong>后果</strong>：上下文被垃圾信息填满，token 消耗暴增，还可能读到敏感文件。</p>
+<p><strong>解决</strong>：项目第一天就创建 .claudeignore。</p>
+<h4 id="坑-5：Stop-hook-无限循环"><a href="#坑-5：Stop-hook-无限循环" class="headerlink" title="坑 5：Stop hook 无限循环"></a>坑 5：Stop hook 无限循环</h4><p><strong>症状</strong>：Stop hook 跑测试，测试失败就阻止 AI 完成。但 AI 重试时又触发 hook，又阻止……</p>
+<p><strong>后果</strong>：无限循环，Claude Code 卡死。</p>
+<p><strong>解决</strong>：在 hook 脚本中检查 <code>stop_hook_active</code> 标志，第二次触发时放行。</p>
+<h3 id="4-3-团队协作建议"><a href="#4-3-团队协作建议" class="headerlink" title="4.3 团队协作建议"></a>4.3 团队协作建议</h3><h4 id="什么提交到-Git？"><a href="#什么提交到-Git？" class="headerlink" title="什么提交到 Git？"></a>什么提交到 Git？</h4><table>
+<thead>
+<tr>
+<th>文件</th>
+<th>是否提交</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>CLAUDE.md</code></td>
+<td>✅ 提交</td>
+<td>团队共识</td>
+</tr>
+<tr>
+<td><code>.claude/settings.json</code></td>
+<td>✅ 提交</td>
+<td>团队权限</td>
+</tr>
+<tr>
+<td><code>.claude/rules/</code></td>
+<td>✅ 提交</td>
+<td>团队规范</td>
+</tr>
+<tr>
+<td><code>.claude/skills/</code></td>
+<td>✅ 提交</td>
+<td>团队工作流</td>
+</tr>
+<tr>
+<td><code>.claude/agents/</code></td>
+<td>✅ 提交</td>
+<td>团队角色</td>
+</tr>
+<tr>
+<td><code>.claude/hooks/</code></td>
+<td>⚠️ 看情况</td>
+<td>如果脚本包含本地路径，不提交</td>
+</tr>
+<tr>
+<td><code>.claudeignore</code></td>
+<td>✅ 提交</td>
+<td>团队共识</td>
+</tr>
+<tr>
+<td><code>CLAUDE.local.md</code></td>
+<td>❌ 不提交</td>
+<td>个人偏好（自动 gitignore）</td>
+</tr>
+<tr>
+<td><code>.claude/settings.local.json</code></td>
+<td>❌ 不提交</td>
+<td>个人权限（自动 gitignore）</td>
+</tr>
+</tbody></table>
+<h4 id="分工维护"><a href="#分工维护" class="headerlink" title="分工维护"></a>分工维护</h4><p>大型项目中，一个人维护所有配置文件是不现实的。建议按领域分工：</p>
+<ul>
+<li><strong>前端负责人</strong>：维护 <code>rules/frontend.md</code></li>
+<li><strong>后端负责人</strong>：维护 <code>rules/backend.md</code>、<code>rules/api-conventions.md</code></li>
+<li><strong>测试负责人</strong>：维护 <code>rules/testing.md</code></li>
+<li><strong>安全负责人</strong>：维护 <code>hooks/bash-firewall.sh</code>、<code>skills/security-review/</code></li>
+</ul>
+<p>每个文件有明确的 owner，改的时候不会冲突。</p>
+<h3 id="4-4-性能优化建议"><a href="#4-4-性能优化建议" class="headerlink" title="4.4 性能优化建议"></a>4.4 性能优化建议</h3><h4 id="省-token"><a href="#省-token" class="headerlink" title="省 token"></a>省 token</h4><ol>
+<li><strong>保持 CLAUDE.md 简洁</strong>：200 行以内</li>
+<li><strong>用好 .claudeignore</strong>：排除大文件和无关文件</li>
+<li><strong>路径作用域 rules/</strong>：只在需要时加载规则</li>
+<li><strong>渐进式披露参考文档</strong>：不在 CLAUDE.md 里贴大段内容</li>
+<li><strong>定期 <code>/compact</code></strong>：上下文超过 60% 就压缩</li>
+</ol>
+<h4 id="提速度"><a href="#提速度" class="headerlink" title="提速度"></a>提速度</h4><ol>
+<li><strong>精确的 CLAUDE.md</strong>：AI 不需要花时间”探索”项目</li>
+<li><strong><code>@</code> 引用文件</strong>：直接告诉 AI 看哪个文件，而不是让它自己找</li>
+<li><strong>限制 agents/skills 的工具</strong>：只给必要的工具，减少决策空间</li>
+<li><strong>用对模型</strong>：简单任务用 haiku，复杂任务用 opus</li>
+</ol>
+<hr>
+<h2 id="第五部分：完整配置示例"><a href="#第五部分：完整配置示例" class="headerlink" title="第五部分：完整配置示例"></a>第五部分：完整配置示例</h2><p>理论讲完了，给你两套前后端可以直接抄的配置模板。基本内容上面都已经提到了，只不过是对上面内容进行总结打包，下面是具体配置项目结构，有需要可以关注我后台回复<code>cc</code>获取。</p>
+<div style="display: flex; justify-content: space-around; gap: 20px;">
+  <img src="/images/claudecode/frontend.png" width="48%" alt="前端架构">
+  <img src="/images/claudecode/backend.png" width="48%" alt="后端架构">
+</div>
+
+<p>此外我还打包了github上star比较多的常用的配置。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="A-文件位置速查表"><a href="#A-文件位置速查表" class="headerlink" title="A. 文件位置速查表"></a>A. 文件位置速查表</h3><pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml">~/.claude/                        ← 全局配置
+├── CLAUDE.md                     <span class="token comment"># 全局指令（所有项目生效）</span>
+├── settings.json                 <span class="token comment"># 全局权限设置</span>
+├── skills/                       <span class="token comment"># 个人 skills（跨项目）</span>
+├── agents/                       <span class="token comment"># 个人 agents（跨项目）</span>
+└── projects/                     <span class="token comment"># 会话历史 + 自动记忆</span>
+
+项目根目录/
+├── CLAUDE.md                     <span class="token comment"># 项目指令（团队共享）</span>
+├── CLAUDE.local.md               <span class="token comment"># 个人覆盖（不进 Git）</span>
+├── .claudeignore                 <span class="token comment"># 忽略文件列表</span>
+│
+└── .claude/                      ← 项目级配置
+    ├── settings.json             <span class="token comment"># 团队权限设置</span>
+    ├── settings.local.json       <span class="token comment"># 个人权限（不进 Git）</span>
+    ├── rules/                    <span class="token comment"># 模块化规则</span>
+    ├── skills/                   <span class="token comment"># 项目级 skills</span>
+    ├── agents/                   <span class="token comment"># 项目级 agents</span>
+    └── hooks/                    <span class="token comment"># hook 脚本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="B-常用命令速查表"><a href="#B-常用命令速查表" class="headerlink" title="B. 常用命令速查表"></a>B. 常用命令速查表</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/help</code></td>
+<td>查看所有命令</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/init</code></td>
+<td>自动生成 CLAUDE.md</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/memory</code></td>
+<td>管理记忆和 CLAUDE.md</td>
+<td><code>Ctrl+O</code> 查看记忆</td>
+</tr>
+<tr>
+<td><code>/context</code></td>
+<td>查看上下文使用情况</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/compact</code></td>
+<td>压缩上下文</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/clear</code></td>
+<td>清空对话</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/model</code></td>
+<td>切换模型</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/rewind</code></td>
+<td>回滚修改</td>
+<td><code>Esc × 2</code></td>
+</tr>
+<tr>
+<td><code>/review</code></td>
+<td>代码审查</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/cost</code></td>
+<td>查看费用</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/resume</code></td>
+<td>恢复历史会话</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>/plan</code></td>
+<td>进入规划模式</td>
+<td><code>Shift+Tab</code> 切换</td>
+</tr>
+</tbody></table>
+<p><strong>快捷键：</strong></p>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Enter</code></td>
+<td>发送消息 / 确认</td>
+</tr>
+<tr>
+<td><code>Shift + Enter</code></td>
+<td>也是发送（不是换行！）</td>
+</tr>
+<tr>
+<td><code>Option/Alt + Enter</code></td>
+<td>换行（不发送）</td>
+</tr>
+<tr>
+<td><code>Ctrl + C</code></td>
+<td>中断当前操作</td>
+</tr>
+<tr>
+<td><code>Esc</code></td>
+<td>取消生成</td>
+</tr>
+<tr>
+<td><code>Esc × 2</code></td>
+<td>回滚界面</td>
+</tr>
+<tr>
+<td><code>Shift + Tab</code></td>
+<td>切换模式</td>
+</tr>
+<tr>
+<td><code>Ctrl + B</code></td>
+<td>后台运行</td>
+</tr>
+</tbody></table>
+<h3 id="C-YAML-Frontmatter-速查"><a href="#C-YAML-Frontmatter-速查" class="headerlink" title="C. YAML Frontmatter 速查"></a>C. YAML Frontmatter 速查</h3><p><strong>rules/ 文件：</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">paths</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token string">"src/api/**/*.ts"</span>
+  <span class="token punctuation">-</span> <span class="token string">"src/handlers/**/*.ts"</span>
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>skills/SKILL.md：</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> security<span class="token punctuation">-</span>review
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 安全审查，在用户提到安全时使用
+<span class="token key atrule">allowed-tools</span><span class="token punctuation">:</span> Read<span class="token punctuation">,</span> Grep<span class="token punctuation">,</span> Glob
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>agents/ 文件：</strong></p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> code<span class="token punctuation">-</span>reviewer
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 代码审查专家
+<span class="token key atrule">model</span><span class="token punctuation">:</span> sonnet
+<span class="token key atrule">tools</span><span class="token punctuation">:</span> Read<span class="token punctuation">,</span> Grep<span class="token punctuation">,</span> Glob
+<span class="token punctuation">---</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="D-settings-json-配置项速查"><a href="#D-settings-json-配置项速查" class="headerlink" title="D. settings.json 配置项速查"></a>D. settings.json 配置项速查</h3><pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://json.schemastore.org/claude-code-settings.json"</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 权限控制</span>
+  <span class="token property">"permissions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"allow"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Read"</span><span class="token punctuation">,</span> <span class="token string">"Write"</span><span class="token punctuation">,</span> <span class="token string">"Bash(npm run *)"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"deny"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"Bash(rm -rf *)"</span><span class="token punctuation">,</span> <span class="token string">"Read(./.env)"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 默认模型</span>
+  <span class="token property">"model"</span><span class="token operator">:</span> <span class="token string">"sonnet"</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 自动压缩阈值</span>
+  <span class="token property">"autoCompactThreshold"</span><span class="token operator">:</span> <span class="token number">80</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// 环境变量</span>
+  <span class="token property">"env"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"NODE_ENV"</span><span class="token operator">:</span> <span class="token string">"development"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// Hooks</span>
+  <span class="token property">"hooks"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"PreToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>...<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"PostToolUse"</span><span class="token operator">:</span> <span class="token punctuation">[</span>...<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"Stop"</span><span class="token operator">:</span> <span class="token punctuation">[</span>...<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>回到文章开头的问题：怎么让 AI 真正”懂”你的项目？</p>
+<p>答案就是<strong>配置</strong>。</p>
+<ul>
+<li><strong>CLAUDE.md</strong> 告诉 AI 项目是什么、怎么做</li>
+<li><strong>settings.json</strong> 控制 AI 能做什么、不能做什么</li>
+<li><strong>rules/</strong> 把规则拆分成模块，按需加载</li>
+<li><strong>hooks/</strong> 让规则从”建议”变成”强制执行”</li>
+<li><strong>skills/</strong> 打包重复的工作流</li>
+<li><strong>agents/</strong> 定义专业的子角色</li>
+<li><strong>Auto Memory</strong> 让 AI 自己记住你的偏好</li>
+</ul>
+<p>配置不是一蹴而就的。从小处开始——先写好 CLAUDE.md，配好基本权限。用一段时间后，你会发现”这里可以自动化”、”那个规则应该拆出来”。逐步迭代，配置会越来越完善。</p>
+<p><strong>好的配置，就像好的基础设施——一旦搭好，每天都会给你带来回报。</strong></p>
+<p>现在，打开你的项目，开始配置吧。</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>本文内容参考了以下资料，感谢各位大佬的分享：</p>
+<ol>
+<li><p><strong>Claude Code 官方文档</strong></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://code.claude.com/docs/zh-CN/how-claude-code-works">https://code.claude.com/docs/zh-CN/how-claude-code-works</a></li>
+</ul>
+</li>
+<li><p><strong>尚硅谷 AI Coding 教程</strong></p>
+<ul>
+<li>零基础实战教程，涵盖 Claude Code 深度使用与进阶技巧</li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1RPET6tEp2/?share_source=copy_web&amp;vd_source=1c112747a1b05592cc7e39e91a3d66aa">https://www.bilibili.com/video/BV1RPET6tEp2/?share_source=copy_web&amp;vd_source=1c112747a1b05592cc7e39e91a3d66aa</a></li>
+</ul>
+</li>
+<li><p><strong>@akshay_pachaar的twitter推文</strong></p>
+<ul>
+<li>原文：<a target="_blank" rel="noopener" href="https://x.com/akshay_pachaar/status/2035341800739877091">https://x.com/akshay_pachaar/status/2035341800739877091</a></li>
+<li>详细解析 CLAUDE.md、自定义命令、skills、agents 和 permissions 的配置方法</li>
+</ul>
+</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ZhangZhengYu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://welcomemonth.github.io/2026/03/07/claude%20code/">https://welcomemonth.github.io/2026/03/07/claude%20code/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ZhangZhengYu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Claude-Code/">
+                                    <span class="chip bg-color">Claude Code</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/blog/">
+                                    <span class="chip bg-color">blog</span>
+                                </a>
+                            
+                                <a href="/tags/vibcoding/">
+                                    <span class="chip bg-color">vibcoding</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .twikoo-card {
+        margin: 1.5rem auto;
+    }
+
+    .twikoo-card .card-content {
+        padding: 20px;
+    }
+
+    #tcomments textarea {
+        box-sizing: border-box;
+        background: url("/") 100% 100% no-repeat;
+    }
+
+    #tcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #tcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #tcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #tcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #tcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #tcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #tcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #tcomments ul li {
+        list-style-type: disc;
+    }
+
+    #tcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #tcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #tcomments table td {
+        min-width: 80px;
+    }
+
+    #tcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #tcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #tcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #tcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #tcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #tcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #tcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #tcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #tcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #tcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #tcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #tcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #tcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #tcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #tcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #tcomments dfn {
+        font-style: italic;
+    }
+
+    #tcomments small {
+        font-size: 85%;
+    }
+
+    #tcomments cite {
+        font-style: normal;
+    }
+
+    #tcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #tcomments table,
+    th,
+    td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n),
+    thead {
+        background-color: #fafafa;
+    }
+
+    #tcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #tcomments table td {
+        min-width: 80px;
+    }
+
+    #tcomments [type="checkbox"]:not(:checked),
+    [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card twikoo-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div class="card-content" style="display: grid">
+        <div id="tcomments"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js"></script>
+<script>
+    twikoo.init({
+        envId: 'https://twikoo.meetmonth.top',
+        el: '#tcomments',
+        region: '',
+        path: ''
+    }).then(function () {
+        var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
+        for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
+            if (tkInputs[tkInputsIndex]) {
+                tkInputs[tkInputsIndex].classList.add('browser-default');
+            }
+        }
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2026/03/07/claude%20code/">
+                    <div class="card-image">
+                        
+                        <img src="/images/claudecode/cc.jpg" class="responsive-img" alt="Claude Code 配置全解析:让 AI 真正懂你的项目">
+                        
+                        <span class="card-title">Claude Code 配置全解析:让 AI 真正懂你的项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-03-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/AI%E5%B7%A5%E5%85%B7/" class="post-category">
+                                    AI工具
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Claude-Code/">
+                        <span class="chip bg-color">Claude Code</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                    <a href="/tags/vibcoding/">
+                        <span class="chip bg-color">vibcoding</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/18/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="基于hexo+matery+GitHub pages搭建博客">
+                        
+                        <span class="card-title">基于hexo+matery+GitHub pages搭建博客</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category">
+                                    技术
+                                </a>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    博客搭建
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                    <a href="/tags/github-pages/">
+                        <span class="chip bg-color">github pages</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2024-2026</span>
+            
+            <a href="/about" target="_blank">ZhangZhengYu</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">11.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2024";
+                        var startMonth = "6";
+                        var startDate = "28";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/welcomemonth" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:meetmonth.top@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1242032610" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1242032610" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
