@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 博客,技术,编程,前端,后端,Hexo,生活">
+    <meta name="keywords" content="分类: 测试驱动开发, 博客,技术,编程,前端,后端,Hexo,生活">
     <meta name="description" content="个人技术博客，分享编程、前端、后端、工具与生活随笔。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分类 | ZhangZhengYu 的博客</title>
+    <title>分类: 测试驱动开发 | ZhangZhengYu 的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -429,7 +429,7 @@
                 
                 <a href="/categories/%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" title="测试驱动开发: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
+                             chip-active "
                             style="background-color: #E8F8F5;">测试驱动开发
                         <span class="tag-length">1</span>
                     </span>
@@ -452,65 +452,68 @@
 
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2026/04/09/golang/go-test/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="/images/golang/TDD.png" class="responsive-img" alt="Go代码如何测试？">
+                            
+                            <span class="card-title">Go代码如何测试？</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                如何保证自己的代码质量？如何对上线后的项目所出现的bug进行提前预演，而不是等待部署上线后崩溃，这就是测试的必要性，每个人都要对自己写的代码负责！
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-09
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    代码测试
+                                </a>
+                                
+                                <a href="/categories/%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" class="post-category">
+                                    测试驱动开发
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
-
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"AI工具","max":3},{"name":"代码测试","max":3},{"name":"技术","max":3},{"name":"测试驱动开发","max":3},{"name":"博客搭建","max":3}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [2,1,1,1,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-
-    
-
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Golang/">
+                            <span class="chip bg-color">Golang</span>
+                        </a>
+                        
+                        <a href="/tags/Testing/">
+                            <span class="chip bg-color">Testing</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
