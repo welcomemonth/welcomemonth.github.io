@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, 博客,技术,编程,前端,后端,Hexo,生活">
-    <meta name="description" content="个人技术博客，分享编程、前端、后端、工具与生活随笔。">
+    <meta name="keywords" content="理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT）, 博客,技术,编程,前端,后端,Hexo,生活">
+    <meta name="description" content="为什么需要状态管理？HTTP 协议本身是无状态的。
+也就是说，服务器每次收到请求时，默认都不知道这个请求是谁发来的。就像一家理发店，如果客人每次来都不报身份，店员根本分不清你是新客还是老客。
+为了解决这个问题，就出现了Cookie。
+Coo">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | ZhangZhengYu 的博客</title>
+    <title>理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT） | ZhangZhengYu 的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -331,109 +334,443 @@
 
 </header>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css" />
-<link rel="stylesheet" type="text/css" href="/css/barrager.css">
-<script src="/libs/valine/av-min.js"></script>
-<script src="/libs/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="/js/jquery.barrager.js"></script>
+    
 
-<div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                记录技术与生活
-                
-            </div>
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/http_state/state.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT）</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-<script>
+
+
+<main class="post-container content">
+
     
-      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
-    
-    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/HTTP/">
+                                <span class="chip bg-color">HTTP</span>
+                            </a>
+                        
+                            <a href="/tags/Cookie/">
+                                <span class="chip bg-color">Cookie</span>
+                            </a>
+                        
+                            <a href="/tags/Session/">
+                                <span class="chip bg-color">Session</span>
+                            </a>
+                        
+                            <a href="/tags/Token/">
+                                <span class="chip bg-color">Token</span>
+                            </a>
+                        
+                            <a href="/tags/JWT/">
+                                <span class="chip bg-color">JWT</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">
+                                <span class="chip bg-color">用户认证</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
+                                后端开发
+                            </a>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="post-category">
+                                前后端交互
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
 
-</script>
-
-
-    </div>
-</div>
-
-<style>
-    #send{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #0ba360;
-    }
-    #clear{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #e7c65c;
-    }
-    p{
-        text-align: center;
-    }
-</style>
-<main class="content">
-    <div id="contact" class="container chip-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2026-05-25
                 </div>
                 
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2026-08-25
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    5 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
-            <!--valine评论弹幕-->
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="为什么需要状态管理？"><a href="#为什么需要状态管理？" class="headerlink" title="为什么需要状态管理？"></a>为什么需要状态管理？</h2><p>HTTP 协议本身是<strong>无状态</strong>的。</p>
+<p>也就是说，服务器每次收到请求时，默认都不知道这个请求是谁发来的。就像一家理发店，如果客人每次来都不报身份，店员根本分不清你是新客还是老客。</p>
+<p>为了解决这个问题，就出现了<strong>Cookie</strong>。</p>
+<h3 id="Cookie-是什么？"><a href="#Cookie-是什么？" class="headerlink" title="Cookie 是什么？"></a>Cookie 是什么？</h3><p>Cookie 可以简单理解成：<strong>店家发给你的一张小纸条</strong>。</p>
+<ul>
+<li>服务器通过 <code>Set-Cookie</code> 把这张纸条发给浏览器。</li>
+<li>浏览器会把纸条存起来。</li>
+<li>以后你每次来店里，浏览器都会<strong>自动</strong>把这张纸条带上。</li>
+</ul>
+<p>Cookie 本身不是状态管理方案，它只是一个<strong>载体</strong>（用来传递信息的工具）。真正的状态管理方案（Session、Token、JWT）都会用到它，或者用类似的方式传递信息。</p>
+<hr>
+<h2 id="方案一：Session-——-把会员卡放在店里"><a href="#方案一：Session-——-把会员卡放在店里" class="headerlink" title="方案一：Session —— 把会员卡放在店里"></a>方案一：Session —— 把会员卡放在店里</h2><p>你去理发店办了张会员卡，但你怕卡丢了，于是跟店家说：</p>
+<blockquote>
+<p>“卡你帮我保管吧，给我一个卡号就行。”</p>
+</blockquote>
+<p>店家同意了：</p>
+<ol>
+<li>把你的会员信息（姓名、余额、消费记录等）锁进店里的保险柜。</li>
+<li>只给你一张写着「卡号」的小纸条（这个卡号就是 <strong>SessionId</strong>）。</li>
+<li>这张小纸条通常放在 Cookie 里，浏览器会自动带着。</li>
+</ol>
+<p>以后你每次来，只要报出卡号，店员就去保险柜里查出你的完整信息。</p>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>真正的用户信息存在<strong>服务器</strong>（保险柜 = 内存 / Redis / 数据库）。</li>
+<li>客户端只拿着一个随机字符串（卡号）。</li>
+<li>服务器对信息有完全的控制权（想过期就过期，想改就改）。</li>
+</ul>
+<p>这就是经典的 <strong>Session</strong> 方案。</p>
+<hr>
+<h2 id="方案二：不透明-Token-——-换了一种传卡号的方式"><a href="#方案二：不透明-Token-——-换了一种传卡号的方式" class="headerlink" title="方案二：不透明 Token —— 换了一种传卡号的方式"></a>方案二：不透明 Token —— 换了一种传卡号的方式</h2><p>随着业务发展，有人发现 Session 有些不方便：</p>
+<ul>
+<li>它主要依赖 Cookie，浏览器会自动带，但手机 App、跨域请求、前后端分离项目用起来没那么灵活。</li>
+<li>前端几乎感知不到自己有“登录凭证”。</li>
+</ul>
+<p>于是出现了 <strong>不透明 Token</strong>（Opaque Token）。</p>
+<p>它的核心机制其实和 Session <strong>几乎一样</strong>：</p>
+<ol>
+<li>服务器生成一个随机字符串（Token）。</li>
+<li>把这个 Token 和用户信息的对应关系存在 Redis 里。</li>
+<li>把 Token 发给客户端。</li>
+<li>客户端以后每次请求都主动带上这个 Token（通常放在请求头 <code>Authorization: Bearer xxxxx</code>）。</li>
+<li>服务器拿到 Token 后，去 Redis 查询对应的用户信息。</li>
+</ol>
+<h3 id="和-Session-的主要区别"><a href="#和-Session-的主要区别" class="headerlink" title="和 Session 的主要区别"></a>和 Session 的主要区别</h3><table>
+<thead>
+<tr>
+<th>对比点</th>
+<th>Session</th>
+<th>不透明 Token</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>传递方式</td>
+<td>放在 Cookie，浏览器自动携带</td>
+<td>放在 Header，客户端主动携带</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>传统网站（同域名）</td>
+<td>前后端分离、手机 App、跨域 API</td>
+</tr>
+<tr>
+<td>客户端感知</td>
+<td>几乎无感知</td>
+<td>明确知道自己有一个 Token，可控性强</td>
+</tr>
+<tr>
+<td>本质</td>
+<td>服务器存数据 + 客户端拿钥匙</td>
+<td>服务器存数据 + 客户端拿钥匙</td>
+</tr>
+</tbody></table>
+<p>所以可以简单记：<strong>不透明 Token ≈ 现代化的 Session</strong>，只是传递方式从 Cookie 换成了 Header。</p>
+<hr>
+<h2 id="方案三：JWT-——-把信息直接写在卡上"><a href="#方案三：JWT-——-把信息直接写在卡上" class="headerlink" title="方案三：JWT —— 把信息直接写在卡上"></a>方案三：JWT —— 把信息直接写在卡上</h2><p>当分店越开越多（分布式系统）时，Session 和不透明 Token 都遇到了同一个问题：</p>
+<blockquote>
+<p>所有分店都必须能访问同一个保险柜（Redis），否则就查不到会员信息。</p>
+</blockquote>
+<p>虽然用 Redis 可以解决，但总归还是依赖共享存储。</p>
+<p>有没有办法让每一家分店自己就能认出你，而不用每次都问总店？</p>
+<p>于是 <strong>JWT（JSON Web Token）</strong> 出现了。</p>
+<h3 id="JWT-的做法"><a href="#JWT-的做法" class="headerlink" title="JWT 的做法"></a>JWT 的做法</h3><p>店家直接把会员信息写在卡上，并盖上一个防伪章：</p>
+<ol>
+<li><strong>Header</strong>：写明“这张卡用什么算法做防伪”。</li>
+<li><strong>Payload</strong>：真正的会员信息（userId、角色、过期时间等）。注意：这里<strong>不能放隐私信息</strong>，因为内容是可见的（只是 Base64 编码，不是加密）。</li>
+<li><strong>Signature（签名）</strong>：店家用只有自己知道的密钥，对前面两部分做一个防伪印章。</li>
+</ol>
+<p>最终这张卡长这样：</p>
+<pre class="line-numbers language-none"><code class="language-none">xxxxx.yyyyy.zzzzz
+（Header.Payload.Signature）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="分店怎么验证？"><a href="#分店怎么验证？" class="headerlink" title="分店怎么验证？"></a>分店怎么验证？</h3><p>任意一家分店拿到这张卡后：</p>
+<ol>
+<li>用同样的密钥重新计算一遍签名。</li>
+<li>和卡上的签名对比。</li>
+<li>一致 → 说明没被篡改，直接信任卡上写的信息。</li>
+<li><strong>完全不需要再打电话问总店</strong>。</li>
+</ol>
+<p>这就是 JWT 能解决分布式问题的核心原因：<strong>信息自包含 + 可本地验证</strong>。</p>
+<h3 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h3><p>JWT 解决的是「<strong>认证</strong>」（你是谁？这个请求合法吗？），而不是把所有用户数据都塞进去。</p>
+<p>实际开发中：</p>
+<ul>
+<li>认证阶段：验证签名即可，不需要查库。</li>
+<li>需要完整用户信息时（比如余额、详细资料、最新状态）：还是会用 Payload 里的 <code>userId</code> 再去查一次数据库或缓存。</li>
+</ul>
+<hr>
+<h2 id="三种方案如何应对「开分店」（分布式）"><a href="#三种方案如何应对「开分店」（分布式）" class="headerlink" title="三种方案如何应对「开分店」（分布式）"></a>三种方案如何应对「开分店」（分布式）</h2><table>
+<thead>
+<tr>
+<th>方案</th>
+<th>分布式下的做法</th>
+<th>是否需要共享存储</th>
+<th>是否真正无状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Session</td>
+<td>所有服务器共享同一个 Redis</td>
+<td>需要</td>
+<td>否</td>
+</tr>
+<tr>
+<td>不透明 Token</td>
+<td>所有服务器共享同一个 Redis</td>
+<td>需要</td>
+<td>否</td>
+</tr>
+<tr>
+<td>JWT</td>
+<td>所有服务器只需共享同一个密钥</td>
+<td><strong>不需要</strong></td>
+<td><strong>是</strong>（认证层面）</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="方案对比总结"><a href="#方案对比总结" class="headerlink" title="方案对比总结"></a>方案对比总结</h2><table>
+<thead>
+<tr>
+<th>方式</th>
+<th>数据主要存在哪里</th>
+<th>传递方式</th>
+<th>分布式友好度</th>
+<th>能否立即作废</th>
+<th>典型使用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Session</td>
+<td>服务器</td>
+<td>Cookie（自动）</td>
+<td>中</td>
+<td>容易</td>
+<td>传统后台管理系统</td>
+</tr>
+<tr>
+<td>不透明 Token</td>
+<td>服务器</td>
+<td>Header（主动）</td>
+<td>中</td>
+<td>容易</td>
+<td>前后端分离、移动端 API</td>
+</tr>
+<tr>
+<td>JWT</td>
+<td>客户端（Token 自身）</td>
+<td>Header（主动）</td>
+<td>高</td>
+<td>较难</td>
+<td>微服务、无状态 API、跨系统</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>用一句话总结三者的本质：</p>
+<ul>
+<li><strong>Session / 不透明 Token</strong>：服务器保管会员档案，你只拿钥匙。</li>
+<li><strong>JWT</strong>：把会员信息直接写在卡上，并盖上防伪章，任何分店都能自己验真。</li>
+</ul>
+<p>没有绝对的好坏，只有适不适合当前场景。</p>
+<p>实际项目中最常见的组合是：</p>
+<ul>
+<li>简单后台 → Session</li>
+<li>前后端分离 / 移动端 → 不透明 Token + Redis，或 JWT + 必要的数据库查询</li>
+<li>高并发、微服务 → JWT（认证） + Redis（缓存用户详细信息）</li>
+</ul>
+<p>希望这个理发店的故事能帮你真正理解这些概念。<br>如果还有不清楚的地方，欢迎在评论区继续交流。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">ZhangZhengYu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://welcomemonth.github.io/2026/05/25/http_state/state/">https://welcomemonth.github.io/2026/05/25/http_state/state/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">ZhangZhengYu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/HTTP/">
+                                    <span class="chip bg-color">HTTP</span>
+                                </a>
+                            
+                                <a href="/tags/Cookie/">
+                                    <span class="chip bg-color">Cookie</span>
+                                </a>
+                            
+                                <a href="/tags/Session/">
+                                    <span class="chip bg-color">Session</span>
+                                </a>
+                            
+                                <a href="/tags/Token/">
+                                    <span class="chip bg-color">Token</span>
+                                </a>
+                            
+                                <a href="/tags/JWT/">
+                                    <span class="chip bg-color">JWT</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">
+                                    <span class="chip bg-color">用户认证</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
             
         </div>
+    </div>
 
-        <!--其他评论card-->
-        <div class="card">
-            
+    
 
-            
+    
 
-            
+    
 
-            
+    
 
-            
+    
 
-            
-                <style>
+    
+
+    
+
+    
+        <style>
     .twikoo-card {
         margin: 1.5rem auto;
     }
@@ -706,13 +1043,256 @@
     });
 </script>
 
-            
+    
 
-            
+    
 
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2026/05/25/http_state/state/">
+                    <div class="card-image">
+                        
+                        <img src="/images/http_state/state.png" class="responsive-img" alt="理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT）">
+                        
+                        <span class="card-title">理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-05-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/" class="post-category">
+                                    后端开发
+                                </a>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BA%A4%E4%BA%92/" class="post-category">
+                                    前后端交互
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTTP/">
+                        <span class="chip bg-color">HTTP</span>
+                    </a>
+                    
+                    <a href="/tags/Cookie/">
+                        <span class="chip bg-color">Cookie</span>
+                    </a>
+                    
+                    <a href="/tags/Session/">
+                        <span class="chip bg-color">Session</span>
+                    </a>
+                    
+                    <a href="/tags/Token/">
+                        <span class="chip bg-color">Token</span>
+                    </a>
+                    
+                    <a href="/tags/JWT/">
+                        <span class="chip bg-color">JWT</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%94%A8%E6%88%B7%E8%AE%A4%E8%AF%81/">
+                        <span class="chip bg-color">用户认证</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2026/04/09/golang/go-test/">
+                    <div class="card-image">
+                        
+                        <img src="/images/golang/TDD.png" class="responsive-img" alt="Go代码如何测试？">
+                        
+                        <span class="card-title">Go代码如何测试？</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            如何保证自己的代码质量？如何对上线后的项目所出现的bug进行提前预演，而不是等待部署上线后崩溃，这就是测试的必要性，每个人都要对自己写的代码负责！
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2026-04-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95/" class="post-category">
+                                    代码测试
+                                </a>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95%E9%A9%B1%E5%8A%A8%E5%BC%80%E5%8F%91/" class="post-category">
+                                    测试驱动开发
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Golang/">
+                        <span class="chip bg-color">Golang</span>
+                    </a>
+                    
+                    <a href="/tags/Testing/">
+                        <span class="chip bg-color">Testing</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
+
+
 
 
     <footer class="page-footer bg-color">

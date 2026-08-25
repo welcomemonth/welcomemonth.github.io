@@ -4,6 +4,43 @@
   
     
     <entry>
+      <title>理发店的故事：彻底搞懂用户状态管理（Cookie/Session/Token/JWT）</title>
+      <link href="/2026/05/25/http_state/state/"/>
+      <url>/2026/05/25/http_state/state/</url>
+      
+        <content type="html"><![CDATA[<h2 id="为什么需要状态管理？"><a href="#为什么需要状态管理？" class="headerlink" title="为什么需要状态管理？"></a>为什么需要状态管理？</h2><p>HTTP 协议本身是<strong>无状态</strong>的。</p><p>也就是说，服务器每次收到请求时，默认都不知道这个请求是谁发来的。就像一家理发店，如果客人每次来都不报身份，店员根本分不清你是新客还是老客。</p><p>为了解决这个问题，就出现了<strong>Cookie</strong>。</p><h3 id="Cookie-是什么？"><a href="#Cookie-是什么？" class="headerlink" title="Cookie 是什么？"></a>Cookie 是什么？</h3><p>Cookie 可以简单理解成：<strong>店家发给你的一张小纸条</strong>。</p><ul><li>服务器通过 <code>Set-Cookie</code> 把这张纸条发给浏览器。</li><li>浏览器会把纸条存起来。</li><li>以后你每次来店里，浏览器都会<strong>自动</strong>把这张纸条带上。</li></ul><p>Cookie 本身不是状态管理方案，它只是一个<strong>载体</strong>（用来传递信息的工具）。真正的状态管理方案（Session、Token、JWT）都会用到它，或者用类似的方式传递信息。</p><hr><h2 id="方案一：Session-——-把会员卡放在店里"><a href="#方案一：Session-——-把会员卡放在店里" class="headerlink" title="方案一：Session —— 把会员卡放在店里"></a>方案一：Session —— 把会员卡放在店里</h2><p>你去理发店办了张会员卡，但你怕卡丢了，于是跟店家说：</p><blockquote><p>“卡你帮我保管吧，给我一个卡号就行。”</p></blockquote><p>店家同意了：</p><ol><li>把你的会员信息（姓名、余额、消费记录等）锁进店里的保险柜。</li><li>只给你一张写着「卡号」的小纸条（这个卡号就是 <strong>SessionId</strong>）。</li><li>这张小纸条通常放在 Cookie 里，浏览器会自动带着。</li></ol><p>以后你每次来，只要报出卡号，店员就去保险柜里查出你的完整信息。</p><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul><li>真正的用户信息存在<strong>服务器</strong>（保险柜 = 内存 / Redis / 数据库）。</li><li>客户端只拿着一个随机字符串（卡号）。</li><li>服务器对信息有完全的控制权（想过期就过期，想改就改）。</li></ul><p>这就是经典的 <strong>Session</strong> 方案。</p><hr><h2 id="方案二：不透明-Token-——-换了一种传卡号的方式"><a href="#方案二：不透明-Token-——-换了一种传卡号的方式" class="headerlink" title="方案二：不透明 Token —— 换了一种传卡号的方式"></a>方案二：不透明 Token —— 换了一种传卡号的方式</h2><p>随着业务发展，有人发现 Session 有些不方便：</p><ul><li>它主要依赖 Cookie，浏览器会自动带，但手机 App、跨域请求、前后端分离项目用起来没那么灵活。</li><li>前端几乎感知不到自己有“登录凭证”。</li></ul><p>于是出现了 <strong>不透明 Token</strong>（Opaque Token）。</p><p>它的核心机制其实和 Session <strong>几乎一样</strong>：</p><ol><li>服务器生成一个随机字符串（Token）。</li><li>把这个 Token 和用户信息的对应关系存在 Redis 里。</li><li>把 Token 发给客户端。</li><li>客户端以后每次请求都主动带上这个 Token（通常放在请求头 <code>Authorization: Bearer xxxxx</code>）。</li><li>服务器拿到 Token 后，去 Redis 查询对应的用户信息。</li></ol><h3 id="和-Session-的主要区别"><a href="#和-Session-的主要区别" class="headerlink" title="和 Session 的主要区别"></a>和 Session 的主要区别</h3><table><thead><tr><th>对比点</th><th>Session</th><th>不透明 Token</th></tr></thead><tbody><tr><td>传递方式</td><td>放在 Cookie，浏览器自动携带</td><td>放在 Header，客户端主动携带</td></tr><tr><td>适用场景</td><td>传统网站（同域名）</td><td>前后端分离、手机 App、跨域 API</td></tr><tr><td>客户端感知</td><td>几乎无感知</td><td>明确知道自己有一个 Token，可控性强</td></tr><tr><td>本质</td><td>服务器存数据 + 客户端拿钥匙</td><td>服务器存数据 + 客户端拿钥匙</td></tr></tbody></table><p>所以可以简单记：<strong>不透明 Token ≈ 现代化的 Session</strong>，只是传递方式从 Cookie 换成了 Header。</p><hr><h2 id="方案三：JWT-——-把信息直接写在卡上"><a href="#方案三：JWT-——-把信息直接写在卡上" class="headerlink" title="方案三：JWT —— 把信息直接写在卡上"></a>方案三：JWT —— 把信息直接写在卡上</h2><p>当分店越开越多（分布式系统）时，Session 和不透明 Token 都遇到了同一个问题：</p><blockquote><p>所有分店都必须能访问同一个保险柜（Redis），否则就查不到会员信息。</p></blockquote><p>虽然用 Redis 可以解决，但总归还是依赖共享存储。</p><p>有没有办法让每一家分店自己就能认出你，而不用每次都问总店？</p><p>于是 <strong>JWT（JSON Web Token）</strong> 出现了。</p><h3 id="JWT-的做法"><a href="#JWT-的做法" class="headerlink" title="JWT 的做法"></a>JWT 的做法</h3><p>店家直接把会员信息写在卡上，并盖上一个防伪章：</p><ol><li><strong>Header</strong>：写明“这张卡用什么算法做防伪”。</li><li><strong>Payload</strong>：真正的会员信息（userId、角色、过期时间等）。注意：这里<strong>不能放隐私信息</strong>，因为内容是可见的（只是 Base64 编码，不是加密）。</li><li><strong>Signature（签名）</strong>：店家用只有自己知道的密钥，对前面两部分做一个防伪印章。</li></ol><p>最终这张卡长这样：</p><pre class="line-numbers language-none"><code class="language-none">xxxxx.yyyyy.zzzzz（Header.Payload.Signature）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="分店怎么验证？"><a href="#分店怎么验证？" class="headerlink" title="分店怎么验证？"></a>分店怎么验证？</h3><p>任意一家分店拿到这张卡后：</p><ol><li>用同样的密钥重新计算一遍签名。</li><li>和卡上的签名对比。</li><li>一致 → 说明没被篡改，直接信任卡上写的信息。</li><li><strong>完全不需要再打电话问总店</strong>。</li></ol><p>这就是 JWT 能解决分布式问题的核心原因：<strong>信息自包含 + 可本地验证</strong>。</p><h3 id="重要提醒"><a href="#重要提醒" class="headerlink" title="重要提醒"></a>重要提醒</h3><p>JWT 解决的是「<strong>认证</strong>」（你是谁？这个请求合法吗？），而不是把所有用户数据都塞进去。</p><p>实际开发中：</p><ul><li>认证阶段：验证签名即可，不需要查库。</li><li>需要完整用户信息时（比如余额、详细资料、最新状态）：还是会用 Payload 里的 <code>userId</code> 再去查一次数据库或缓存。</li></ul><hr><h2 id="三种方案如何应对「开分店」（分布式）"><a href="#三种方案如何应对「开分店」（分布式）" class="headerlink" title="三种方案如何应对「开分店」（分布式）"></a>三种方案如何应对「开分店」（分布式）</h2><table><thead><tr><th>方案</th><th>分布式下的做法</th><th>是否需要共享存储</th><th>是否真正无状态</th></tr></thead><tbody><tr><td>Session</td><td>所有服务器共享同一个 Redis</td><td>需要</td><td>否</td></tr><tr><td>不透明 Token</td><td>所有服务器共享同一个 Redis</td><td>需要</td><td>否</td></tr><tr><td>JWT</td><td>所有服务器只需共享同一个密钥</td><td><strong>不需要</strong></td><td><strong>是</strong>（认证层面）</td></tr></tbody></table><hr><h2 id="方案对比总结"><a href="#方案对比总结" class="headerlink" title="方案对比总结"></a>方案对比总结</h2><table><thead><tr><th>方式</th><th>数据主要存在哪里</th><th>传递方式</th><th>分布式友好度</th><th>能否立即作废</th><th>典型使用场景</th></tr></thead><tbody><tr><td>Session</td><td>服务器</td><td>Cookie（自动）</td><td>中</td><td>容易</td><td>传统后台管理系统</td></tr><tr><td>不透明 Token</td><td>服务器</td><td>Header（主动）</td><td>中</td><td>容易</td><td>前后端分离、移动端 API</td></tr><tr><td>JWT</td><td>客户端（Token 自身）</td><td>Header（主动）</td><td>高</td><td>较难</td><td>微服务、无状态 API、跨系统</td></tr></tbody></table><hr><h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>用一句话总结三者的本质：</p><ul><li><strong>Session / 不透明 Token</strong>：服务器保管会员档案，你只拿钥匙。</li><li><strong>JWT</strong>：把会员信息直接写在卡上，并盖上防伪章，任何分店都能自己验真。</li></ul><p>没有绝对的好坏，只有适不适合当前场景。</p><p>实际项目中最常见的组合是：</p><ul><li>简单后台 → Session</li><li>前后端分离 / 移动端 → 不透明 Token + Redis，或 JWT + 必要的数据库查询</li><li>高并发、微服务 → JWT（认证） + Redis（缓存用户详细信息）</li></ul><p>希望这个理发店的故事能帮你真正理解这些概念。<br>如果还有不清楚的地方，欢迎在评论区继续交流。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 后端开发 </category>
+          
+          <category> 前后端交互 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+            <tag> Cookie </tag>
+            
+            <tag> Session </tag>
+            
+            <tag> Token </tag>
+            
+            <tag> JWT </tag>
+            
+            <tag> 用户认证 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Go代码如何测试？</title>
       <link href="/2026/04/09/golang/go-test/"/>
       <url>/2026/04/09/golang/go-test/</url>
@@ -49,9 +86,9 @@
       
         <tags>
             
-            <tag> eino </tag>
-            
             <tag> vibcoding </tag>
+            
+            <tag> eino </tag>
             
             <tag> langchain </tag>
             
@@ -78,9 +115,9 @@
       
         <tags>
             
-            <tag> vibcoding </tag>
-            
             <tag> Claude Code </tag>
+            
+            <tag> vibcoding </tag>
             
         </tags>
       
