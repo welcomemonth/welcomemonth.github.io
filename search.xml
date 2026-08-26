@@ -32,8 +32,6 @@
             
             <tag> JWT </tag>
             
-            <tag> 用户认证 </tag>
-            
         </tags>
       
     </entry>
@@ -86,9 +84,9 @@
       
         <tags>
             
-            <tag> vibcoding </tag>
-            
             <tag> eino </tag>
+            
+            <tag> vibcoding </tag>
             
             <tag> langchain </tag>
             
@@ -115,9 +113,9 @@
       
         <tags>
             
-            <tag> Claude Code </tag>
-            
             <tag> vibcoding </tag>
+            
+            <tag> Claude Code </tag>
             
         </tags>
       
