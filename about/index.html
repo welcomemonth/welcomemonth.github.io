@@ -402,21 +402,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">6</a></span>
+    <span class="count"><a href="/">8</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">7</a></span>
+    <span class="count"><a href="/categories">10</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">22</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -432,21 +432,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">6</a></span>
+    <span class="count"><a href="/">8</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">7</a></span>
+    <span class="count"><a href="/categories">10</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">17</a></span>
+    <span class="count"><a href="/tags">22</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -580,7 +580,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2025-08","2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08"]
+            data: ["2025-09","2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"]
         },
         yAxis: {
             type: 'value',
@@ -590,7 +590,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,2,1,2,0,0,0],
+                data: [0,0,0,0,0,0,2,1,2,1,0,0,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -632,7 +632,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"AI工具","value":3},{"name":"后端开发","value":1},{"name":"代码测试","value":1},{"name":"技术","value":1},{"name":"前后端交互","value":1},{"name":"测试驱动开发","value":1},{"name":"博客搭建","value":1}],
+                data: [{"name":"AI工具","value":3},{"name":"Go语言","value":1},{"name":"后端开发","value":1},{"name":"代码测试","value":1},{"name":"技术","value":1},{"name":"Golang","value":1},{"name":"性能调优","value":1},{"name":"前后端交互","value":1},{"name":"测试驱动开发","value":1},{"name":"博客搭建","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -656,7 +656,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["vibcoding","eino","langchain","Claude Code","RAG","评测","HTTP","Cookie","Session","Token"]
+                data: ["vibcoding","Go","Claude Code","RAG","评测","pprof","性能优化","实战笔记","踩坑避坑","eino"]
             }
         ],
         yAxis: [
@@ -669,7 +669,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [2,1,1,1,1,1,1,1,1,1],
+                data: [2,2,1,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -839,26 +839,14 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/eino/">
-                <span class="chip center-align waves-effect waves-light chip-default">eino</span>
+            <a href="/tags/Claude-Code/">
+                <span class="chip center-align waves-effect waves-light chip-default">Claude Code</span>
             </a>
             
             
             
             <a href="/tags/vibcoding/">
                 <span class="chip center-align waves-effect waves-light chip-default">vibcoding</span>
-            </a>
-            
-            
-            
-            <a href="/tags/langchain/">
-                <span class="chip center-align waves-effect waves-light chip-default">langchain</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Claude-Code/">
-                <span class="chip center-align waves-effect waves-light chip-default">Claude Code</span>
             </a>
             
             
@@ -871,6 +859,44 @@
             
             <a href="/tags/%E8%AF%84%E6%B5%8B/">
                 <span class="chip center-align waves-effect waves-light chip-default">评测</span>
+            </a>
+            
+            
+            
+            <a href="/tags/pprof/">
+                <span class="chip center-align waves-effect waves-light chip-default">pprof</span>
+            </a>
+            
+            
+            
+            
+            
+            <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                <span class="chip center-align waves-effect waves-light chip-default">性能优化</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E5%AE%9E%E6%88%98%E7%AC%94%E8%AE%B0/">
+                <span class="chip center-align waves-effect waves-light chip-default">实战笔记</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E8%B8%A9%E5%9D%91%E9%81%BF%E5%9D%91/">
+                <span class="chip center-align waves-effect waves-light chip-default">踩坑避坑</span>
+            </a>
+            
+            
+            
+            <a href="/tags/eino/">
+                <span class="chip center-align waves-effect waves-light chip-default">eino</span>
+            </a>
+            
+            
+            
+            <a href="/tags/langchain/">
+                <span class="chip center-align waves-effect waves-light chip-default">langchain</span>
             </a>
             
             
@@ -1071,7 +1097,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">19.1k</span>
+                        class="white-color">22.1k</span>
             
             
             
